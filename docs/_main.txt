@@ -1,0 +1,57 @@
+/*
+
+    Copyright (C) 2008 Bernd Arnold
+	
+*/
+
+/*! \page index Bombermaaan
+
+<img align=center src="Title.png" alt="Bombermaaan logo">
+   
+<h2>Introduction</h2>
+
+Bombermaaan is a clone of the famous Bomberman and Dynablaster games. It runs under most Win32 operating systems.
+
+You have the choice of installing Bombermaaan and running the game from the start menu or by 
+unzipping the package into a folder and starting the game from there.
+
+See \ref controls to see the keyboard layout. Bombermaaan is controlled by the keyboard.
+
+
+<h2>Bombermaaan license</h2>
+
+<pre>
+Copyright (C) 2000-2002, 2007 Thibaut Tollemer
+Copyright (C) 2007, 2008 Bernd Arnold
+Copyright (C) 2008 Jerome Bigot
+Copyright (C) 2008 Markus Drescher
+
+Bombermaaan is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Bombermaaan is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Bombermaaan.  If not, see <http://www.gnu.org/licenses/>.
+</pre>
+
+
+<h2>Credits</h2>
+
+Bombermaaan is using TinyXML from <a href="https://sourceforge.net/projects/tinyxml">https://sourceforge.net/projects/tinyxml</a>.
+
+Bombermaaan is using <a href="http://www.doxygen.org/index.html">Doxygen</a> for <a href="http://bombermaaan.sourceforge.net/doxydoc/html/">documentation</a> purposes.
+
+Bombermaaan is using SimpleIni from <a href="http://code.jellycan.com/simpleini/">http://code.jellycan.com/simpleini/</a>.
+
+
+<h2>Project host</h2>
+
+The Bombermaaan project is hosted on SourceForge.net. 
+
+*/

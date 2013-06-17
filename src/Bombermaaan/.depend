@@ -1,0 +1,941 @@
+CBoard.o: CBoard.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CBoard.h CClock.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h COptions.h \
+ CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CScores.h CArena.h CArenaCloser.h \
+ CBomber.h CBomberMove.h CBomb.h CWall.h CFloor.h
+CClock.o: CClock.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CClock.h
+CCloudManager.o: CCloudManager.cpp STDAFX.H winreplace.h CLog.h \
+ CConsole.h CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H \
+ CCloudManager.h CScroller.h CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h
+CCommandChunk.o: CCommandChunk.cpp STDAFX.H winreplace.h CLog.h \
+ CConsole.h CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H \
+ CCommandChunk.h CBomber.h CElement.h CBomberMove.h COptions.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h CBomb.h
+CControls.o: CControls.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CControls.h CFont.h \
+ CModeScreen.h CGame.h CWindow.h COptions.h CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CElement.h CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h \
+ CInput.h CSDLInput.h CMainInput.h CPlayerInput.h CDrawGame.h CWinner.h \
+ CVictory.h CMatch.h CBoard.h CArena.h CArenaCloser.h CBomber.h \
+ CBomberMove.h CBomb.h CWall.h CFloor.h CClock.h CAiManager.h CAiArena.h \
+ CSound.h /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h \
+ CScores.h CMenu.h CMenuBomber.h CMenuBase.h CMenuInput.h CMenuMatch.h \
+ CMenuLevel.h CMenuYesNo.h CTitle.h CCloudManager.h CScroller.h CDemo.h \
+ CMosaic.h CRandomMosaic.h
+CDemo.o: CDemo.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CDemo.h CBoard.h CArena.h \
+ CArenaCloser.h CBomber.h CElement.h CBomberMove.h COptions.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h \
+ CFloor.h CClock.h CAiManager.h CAiArena.h CFont.h CModeScreen.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h CInput.h \
+ CSDLInput.h CMainInput.h CPlayerInput.h CGame.h CWindow.h CDrawGame.h \
+ CWinner.h CVictory.h CMatch.h CScores.h CMenu.h CMenuBomber.h \
+ CMenuBase.h CMenuInput.h CMenuMatch.h CMenuLevel.h CMenuYesNo.h CTitle.h \
+ CCloudManager.h CScroller.h CControls.h CPauseMessage.h CHurryMessage.h
+CDrawGame.o: CDrawGame.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CDrawGame.h \
+ CModeScreen.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h COptions.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CGame.h CWindow.h CWinner.h CVictory.h \
+ CMatch.h CBoard.h CArena.h CArenaCloser.h CBomber.h CBomberMove.h \
+ CBomb.h CWall.h CFloor.h CClock.h CAiManager.h CAiArena.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h CScores.h \
+ CMenu.h CMenuBomber.h CMenuBase.h CMenuInput.h CMenuMatch.h CMenuLevel.h \
+ CFont.h CMenuYesNo.h CTitle.h CCloudManager.h CScroller.h CControls.h \
+ CDemo.h
+CHurryMessage.o: CHurryMessage.cpp STDAFX.H winreplace.h CLog.h \
+ CConsole.h CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H \
+ CHurryMessage.h CScroller.h CSound.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h CDisplay.h CSDLVideo.h
+CLevel.o: CLevel.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CLevel.h CItem.h CElement.h \
+ CExplosion.h CArena.h CArenaCloser.h CBomber.h CBomberMove.h COptions.h \
+ CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h ../third-party/tinyxml/tinyxml.h CBomb.h \
+ CWall.h CFloor.h ../third-party/simpleini/SimpleIni.h \
+ ../third-party/simpleini/ConvertUTF.h
+CMatch.o: CMatch.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CMatch.h CBoard.h CArena.h \
+ CArenaCloser.h CBomber.h CElement.h CBomberMove.h COptions.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h \
+ CFloor.h CClock.h CAiManager.h CAiArena.h CModeScreen.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h CInput.h \
+ CSDLInput.h CMainInput.h CPlayerInput.h CGame.h CWindow.h CDrawGame.h \
+ CWinner.h CVictory.h CScores.h CMenu.h CMenuBomber.h CMenuBase.h \
+ CMenuInput.h CMenuMatch.h CMenuLevel.h CFont.h CMenuYesNo.h CTitle.h \
+ CCloudManager.h CScroller.h CControls.h CDemo.h CPauseMessage.h \
+ CHurryMessage.h CCommandChunk.h CArenaSnapshot.h
+CMenu.o: CMenu.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CMenu.h CMenuBomber.h \
+ CMenuBase.h CMenuInput.h CMenuMatch.h CMenuLevel.h CFont.h CModeScreen.h \
+ CGame.h CWindow.h COptions.h CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CElement.h CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h \
+ CInput.h CSDLInput.h CMainInput.h CPlayerInput.h CDrawGame.h CWinner.h \
+ CVictory.h CMatch.h CBoard.h CArena.h CArenaCloser.h CBomber.h \
+ CBomberMove.h CBomb.h CWall.h CFloor.h CClock.h CAiManager.h CAiArena.h \
+ CSound.h /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h \
+ CScores.h CMenuYesNo.h CTitle.h CCloudManager.h CScroller.h CControls.h \
+ CDemo.h CMosaic.h CRandomMosaic.h
+CMenuBase.o: CMenuBase.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CMenuBase.h CMenu.h \
+ CMenuBomber.h CMenuInput.h CMenuMatch.h CMenuLevel.h CFont.h \
+ CModeScreen.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h COptions.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CSound.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h
+CMenuBomber.o: CMenuBomber.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CMenuBomber.h \
+ CMenuBase.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h COptions.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CFont.h CMenu.h CMenuInput.h \
+ CMenuMatch.h CMenuLevel.h CModeScreen.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h
+CMenuInput.o: CMenuInput.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CMenuInput.h \
+ CMenuBase.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h COptions.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CFont.h CMenu.h CMenuBomber.h \
+ CMenuMatch.h CMenuLevel.h CModeScreen.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h
+CMenuLevel.o: CMenuLevel.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CMenuLevel.h \
+ CMenuBase.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h COptions.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CFont.h CMenu.h CMenuBomber.h \
+ CMenuInput.h CMenuMatch.h CModeScreen.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h
+CMenuMatch.o: CMenuMatch.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CMenuLevel.h \
+ CMenuBase.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h COptions.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CFont.h CMenu.h CMenuBomber.h \
+ CMenuInput.h CMenuMatch.h CModeScreen.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h
+CMenuYesNo.o: CMenuYesNo.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CMenuYesNo.h CFont.h \
+ CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h COptions.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CSound.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h CGame.h CWindow.h CDrawGame.h CModeScreen.h \
+ CWinner.h CVictory.h CMatch.h CBoard.h CArena.h CArenaCloser.h CBomber.h \
+ CBomberMove.h CBomb.h CWall.h CFloor.h CClock.h CAiManager.h CAiArena.h \
+ CScores.h CMenu.h CMenuBomber.h CMenuBase.h CMenuInput.h CMenuMatch.h \
+ CMenuLevel.h CTitle.h CCloudManager.h CScroller.h CControls.h CDemo.h
+CModeScreen.o: CModeScreen.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CModeScreen.h \
+ CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h COptions.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CGame.h CWindow.h CDrawGame.h CWinner.h \
+ CVictory.h CMatch.h CBoard.h CArena.h CArenaCloser.h CBomber.h \
+ CBomberMove.h CBomb.h CWall.h CFloor.h CClock.h CAiManager.h CAiArena.h \
+ CSound.h /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h \
+ CScores.h CMenu.h CMenuBomber.h CMenuBase.h CMenuInput.h CMenuMatch.h \
+ CMenuLevel.h CFont.h CMenuYesNo.h CTitle.h CCloudManager.h CScroller.h \
+ CControls.h CDemo.h
+CMosaic.o: CMosaic.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CMosaic.h CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h
+CPauseMessage.o: CPauseMessage.cpp STDAFX.H winreplace.h CLog.h \
+ CConsole.h CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H \
+ CPauseMessage.h CScroller.h CSound.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h CDisplay.h CSDLVideo.h
+CRandomMosaic.o: CRandomMosaic.cpp STDAFX.H winreplace.h CLog.h \
+ CConsole.h CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H \
+ CRandomMosaic.h CMosaic.h
+CScroller.o: CScroller.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CScroller.h
+CTitle.o: CTitle.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CTitle.h CModeScreen.h \
+ CCloudManager.h CScroller.h CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CInput.h \
+ CSDLInput.h CMainInput.h CPlayerInput.h COptions.h CItem.h CElement.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h CGame.h CWindow.h \
+ CDrawGame.h CWinner.h CVictory.h CMatch.h CBoard.h CArena.h \
+ CArenaCloser.h CBomber.h CBomberMove.h CBomb.h CWall.h CFloor.h CClock.h \
+ CAiManager.h CAiArena.h CSound.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h CScores.h CMenu.h CMenuBomber.h CMenuBase.h \
+ CMenuInput.h CMenuMatch.h CMenuLevel.h CFont.h CMenuYesNo.h CControls.h \
+ CDemo.h
+CVictory.o: CVictory.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CVictory.h CModeScreen.h CGame.h \
+ CWindow.h COptions.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h CDrawGame.h CWinner.h CMatch.h CBoard.h CArena.h \
+ CArenaCloser.h CBomber.h CBomberMove.h CBomb.h CWall.h CFloor.h CClock.h \
+ CAiManager.h CAiArena.h CSound.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h CScores.h CMenu.h CMenuBomber.h CMenuBase.h \
+ CMenuInput.h CMenuMatch.h CMenuLevel.h CFont.h CMenuYesNo.h CTitle.h \
+ CCloudManager.h CScroller.h CControls.h CDemo.h
+CWinner.o: CWinner.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CWinner.h CModeScreen.h \
+ CScores.h CMatch.h CBoard.h CArena.h CArenaCloser.h CBomber.h CElement.h \
+ CBomberMove.h COptions.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h CFloor.h CClock.h \
+ CAiManager.h CAiArena.h CSound.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h CGame.h CWindow.h CInput.h CSDLInput.h \
+ CMainInput.h CPlayerInput.h CDrawGame.h CVictory.h CMenu.h CMenuBomber.h \
+ CMenuBase.h CMenuInput.h CMenuMatch.h CMenuLevel.h CFont.h CMenuYesNo.h \
+ CTitle.h CCloudManager.h CScroller.h CControls.h CDemo.h CMosaic.h \
+ CRandomMosaic.h
+CConsole.o: CConsole.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H
+CSDLVideo.o: CSDLVideo.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h \
+ BombermaaanIco.h
+CSDLInput.o: CSDLInput.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CSDLInput.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h
+CLog.o: CLog.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H
+CWindow.o: CWindow.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CWindow.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h
+CDebug.o: CDebug.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CGame.h CWindow.h COptions.h \
+ CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h CDrawGame.h CModeScreen.h CWinner.h CVictory.h CMatch.h \
+ CBoard.h CArena.h CArenaCloser.h CBomber.h CBomberMove.h CBomb.h CWall.h \
+ CFloor.h CClock.h CAiManager.h CAiArena.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h CScores.h \
+ CMenu.h CMenuBomber.h CMenuBase.h CMenuInput.h CMenuMatch.h CMenuLevel.h \
+ CFont.h CMenuYesNo.h CTitle.h CCloudManager.h CScroller.h CControls.h \
+ CDemo.h
+CDisplay.o: CDisplay.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h
+CFont.o: CFont.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CFont.h CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h
+CGame.o: CGame.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CGame.h CWindow.h COptions.h \
+ CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h CDrawGame.h CModeScreen.h CWinner.h CVictory.h CMatch.h \
+ CBoard.h CArena.h CArenaCloser.h CBomber.h CBomberMove.h CBomb.h CWall.h \
+ CFloor.h CClock.h CAiManager.h CAiArena.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h CScores.h \
+ CMenu.h CMenuBomber.h CMenuBase.h CMenuInput.h CMenuMatch.h CMenuLevel.h \
+ CFont.h CMenuYesNo.h CTitle.h CCloudManager.h CScroller.h CControls.h \
+ CDemo.h
+CInput.o: CInput.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CInput.h CSDLInput.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CMainInput.h \
+ CPlayerInput.h COptions.h CDisplay.h CSDLVideo.h CItem.h CElement.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h
+CMainInput.o: CMainInput.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CMainInput.h \
+ CSDLInput.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h
+COptions.o: COptions.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H COptions.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CElement.h CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h \
+ CInput.h CSDLInput.h CMainInput.h CPlayerInput.h CArena.h CArenaCloser.h \
+ CBomber.h CBomberMove.h CBomb.h CWall.h CFloor.h
+CPlayerInput.o: CPlayerInput.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CPlayerInput.h \
+ COptions.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CSDLInput.h CInput.h CMainInput.h
+CScores.o: CScores.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CScores.h COptions.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CElement.h CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h
+CSound.o: CSound.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CSound.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h
+CArena.o: CArena.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CArena.h CArenaCloser.h \
+ CBomber.h CElement.h CBomberMove.h COptions.h CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h \
+ CFloor.h CClock.h CArenaSnapshot.h
+CArenaCloser.o: CArenaCloser.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CArenaCloser.h CArena.h \
+ CBomber.h CElement.h CBomberMove.h COptions.h CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h \
+ CFloor.h CArenaSnapshot.h
+CArenaSnapshot.o: CArenaSnapshot.cpp STDAFX.H winreplace.h CLog.h \
+ CConsole.h CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H \
+ CArenaSnapshot.h
+CBomb.o: CBomb.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CBomb.h CElement.h CArena.h \
+ CArenaCloser.h CBomber.h CBomberMove.h COptions.h CDisplay.h CSDLVideo.h \
+ /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h CWall.h CFloor.h \
+ CSound.h /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h \
+ CArenaSnapshot.h
+CBomber.o: CBomber.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CBomber.h CElement.h \
+ CBomberMove.h COptions.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CBomb.h CArena.h CArenaCloser.h CWall.h \
+ CFloor.h CSound.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h CArenaSnapshot.h
+CBomberMove.o: CBomberMove.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CBomberMove.h CBomber.h \
+ CElement.h COptions.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CBomb.h CArena.h CArenaCloser.h CWall.h \
+ CFloor.h CArenaSnapshot.h
+CElement.o: CElement.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CElement.h CArenaSnapshot.h
+CExplosion.o: CExplosion.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CExplosion.h CElement.h \
+ CArena.h CArenaCloser.h CBomber.h CBomberMove.h COptions.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CLevel.h ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h CFloor.h \
+ CArenaSnapshot.h
+CFloor.o: CFloor.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CFloor.h CElement.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CArena.h \
+ CArenaCloser.h CBomber.h CBomberMove.h COptions.h CItem.h CExplosion.h \
+ CLevel.h ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h \
+ CArenaSnapshot.h
+CItem.o: CItem.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CItem.h CElement.h CExplosion.h \
+ CArena.h CArenaCloser.h CBomber.h CBomberMove.h COptions.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h CFloor.h \
+ CArenaSnapshot.h
+CWall.o: CWall.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CWall.h CElement.h CBomber.h \
+ CBomberMove.h COptions.h CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CBomb.h CArena.h CArenaCloser.h \
+ CFloor.h CSound.h /usr/include/SDL/SDL_mixer.h \
+ /usr/include/SDL/SDL_types.h CArenaSnapshot.h
+CAiArena.o: CAiArena.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CAiArena.h CArena.h \
+ CArenaCloser.h CBomber.h CElement.h CBomberMove.h COptions.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h \
+ CFloor.h
+CAiBomber.o: CAiBomber.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CAiArena.h CArena.h \
+ CArenaCloser.h CBomber.h CElement.h CBomberMove.h COptions.h CDisplay.h \
+ CSDLVideo.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
+ /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
+ /usr/include/SDL/SDL_platform.h /usr/include/SDL/begin_code.h \
+ /usr/include/SDL/close_code.h /usr/include/SDL/SDL_audio.h \
+ /usr/include/SDL/SDL_error.h /usr/include/SDL/SDL_endian.h \
+ /usr/include/SDL/SDL_mutex.h /usr/include/SDL/SDL_thread.h \
+ /usr/include/SDL/SDL_rwops.h /usr/include/SDL/SDL_cdrom.h \
+ /usr/include/SDL/SDL_cpuinfo.h /usr/include/SDL/SDL_events.h \
+ /usr/include/SDL/SDL_active.h /usr/include/SDL/SDL_keyboard.h \
+ /usr/include/SDL/SDL_keysym.h /usr/include/SDL/SDL_mouse.h \
+ /usr/include/SDL/SDL_video.h /usr/include/SDL/SDL_joystick.h \
+ /usr/include/SDL/SDL_quit.h /usr/include/SDL/SDL_loadso.h \
+ /usr/include/SDL/SDL_timer.h /usr/include/SDL/SDL_version.h CItem.h \
+ CExplosion.h CLevel.h ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h \
+ CFloor.h CAiBomber.h
+CAiManager.o: CAiManager.cpp STDAFX.H winreplace.h CLog.h CConsole.h \
+ CDebug.h CTimer.h ../RES32/resource.h RESOURCE.H CAiManager.h CAiArena.h \
+ CArena.h CArenaCloser.h CBomber.h CElement.h CBomberMove.h COptions.h \
+ CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CBomb.h CWall.h CFloor.h CAiBomber.h
+WinMain.o: WinMain.cpp STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H CGame.h CWindow.h COptions.h \
+ CDisplay.h CSDLVideo.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
+ /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
+ /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
+ /usr/include/SDL/SDL_thread.h /usr/include/SDL/SDL_rwops.h \
+ /usr/include/SDL/SDL_cdrom.h /usr/include/SDL/SDL_cpuinfo.h \
+ /usr/include/SDL/SDL_events.h /usr/include/SDL/SDL_active.h \
+ /usr/include/SDL/SDL_keyboard.h /usr/include/SDL/SDL_keysym.h \
+ /usr/include/SDL/SDL_mouse.h /usr/include/SDL/SDL_video.h \
+ /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
+ /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
+ /usr/include/SDL/SDL_version.h CItem.h CElement.h CExplosion.h CLevel.h \
+ ../third-party/tinyxml/tinyxml.h CInput.h CSDLInput.h CMainInput.h \
+ CPlayerInput.h CDrawGame.h CModeScreen.h CWinner.h CVictory.h CMatch.h \
+ CBoard.h CArena.h CArenaCloser.h CBomber.h CBomberMove.h CBomb.h CWall.h \
+ CFloor.h CClock.h CAiManager.h CAiArena.h CSound.h \
+ /usr/include/SDL/SDL_mixer.h /usr/include/SDL/SDL_types.h CScores.h \
+ CMenu.h CMenuBomber.h CMenuBase.h CMenuInput.h CMenuMatch.h CMenuLevel.h \
+ CFont.h CMenuYesNo.h CTitle.h CCloudManager.h CScroller.h CControls.h \
+ CDemo.h
+winreplace.o: winreplace.cpp winreplace.h
+STDAFX.o: STDAFX.CPP STDAFX.H winreplace.h CLog.h CConsole.h CDebug.h \
+ CTimer.h ../RES32/resource.h RESOURCE.H
