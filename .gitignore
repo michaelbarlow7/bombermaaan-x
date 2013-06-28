@@ -1,0 +1,6 @@
+*.o
+*.swp
+.depend
+src/Bombermaaan/Bombermaaan
+src/RESGEN/ResGen
+src/RESGEN/libbombermaaan.so.1.0.0

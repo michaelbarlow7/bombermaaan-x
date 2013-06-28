@@ -12,7 +12,13 @@ BASENAME = libbombermaaan.so
 BIN  = $(BASENAME).1
 REVISION = 0.0
 CXXFLAGS = $(CXXINCS) -fPIC -Wall -O2
-LDFLAGS = -shared -Wl,-soname,$(BIN) -lc
+LDFLAGS = -shared -Wl,-install_name,$(BIN) -lc
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)	
+	LDFLAGS = -shared -Wl,-install_name,$(BIN) -lc
+else
+	LDFLAGS = -shared -Wl,-soname,$(BIN) -lc
+endif
 RESGENBIN = ./ResGen
 #RESGEN1632 = --sprite
 #RESGENDIR = --bin

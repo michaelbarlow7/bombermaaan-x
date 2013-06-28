@@ -47,7 +47,11 @@
 #include "winreplace.h"
 #include <errno.h>
 #include <arpa/inet.h>
-#include <sys/io.h>
+#ifdef __APPLE__
+    #include <sys/uio.h>
+#else
+    #include <sys/io.h>
+#endif
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <sys/stat.h>
