@@ -1,0 +1,44 @@
+HOW TO BUILD
+
+Currently, I only know how to build the game for Linux and Mac OS X.
+
+It looks like there are some further instructions in the docs/ directory, but I'm going to write these up here anyway for my (michaelbarlow7) own sake.
+
+These were derived from the original instructions here: http://bombermaaan.sourceforge.net/doxydoc/html/compileinstructions.html
+
+LINUX
+
+- Install SDL and SDL_mixer development libraries. Should be able to do this via your package manager
+-- e.g. "sudo apt-get install libsdl1.2-dev libsdl-mixer1.2-dev"
+
+- Clone my repo.
+-- e.g. "git clone https://github.com/michaelbarlow7/bombermaaan-x.git"
+-- This includes all image and sound resources
+
+- Change to the src/ directory and type "make"
+
+- Change to src/bombermaaan/ and ensure the "run-bm" shell script is executable.
+-- "chmod +x run-bm"
+
+- Run this to run bombermaaan.
+-- "./run-bm"
+
+MAC
+
+- Install SDL and SDL_mixer development libraries. I used homebrew for this. You'll need libmikmod and libvorbis for the .s3m and .ogg files respectively.
+-- "brew install SDL", "brew install SDL_mixer --with-libmikmod --with-libvorbis"
+
+- Clone my repo.
+-- e.g. "git clone https://github.com/michaelbarlow7/bombermaaan-x.git"
+-- This includes all image and sound resources
+
+- Change to the src/ directory and type "make"
+
+- Change to src/bombermaaan/ and ensure the "run-bm" shell script is executable.
+-- "chmod +x run-bm"
+
+- Run this to run bombermaaan.
+-- "./run-bm"
+
+WINDOWS
+- Coming soon...hoping to use gcc via MinGW and MSYS instead of Microsoft's C++ compiler (which I think it was using before). This would make the code a lot cleaner and easier to work with. 
