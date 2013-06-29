@@ -191,7 +191,8 @@ bool buildResourceArrayWithHeader(int hBitmapCount, int hSoundCount,
                 }
             }
             
-            if (pos == -1 || wspace < pos)
+            if (pos == -1 
+                    || (wspace < pos && wspace != -1))
             {
                 fprintf(stderr, "unable to determine resource number for %s\n",
                         resname);

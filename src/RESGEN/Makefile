@@ -16,8 +16,10 @@ LDFLAGS = -shared -Wl,-install_name,$(BIN) -lc
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)	
 	LDFLAGS = -shared -Wl,-install_name,$(BIN) -lc
-else
+elif ($(UNAME_S),Linux)
 	LDFLAGS = -shared -Wl,-soname,$(BIN) -lc
+else
+	LDFLAGS = -shared -Wl,-soname,$(BIN)
 endif
 RESGENBIN = ./ResGen
 #RESGEN1632 = --sprite
