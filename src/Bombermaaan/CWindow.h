@@ -32,12 +32,12 @@
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-#ifdef WIN32
-#define WIN32_LEAN_AND_MEAN     // Exclude rarely-used stuff from Windows headers
-#include <windows.h>
-#else
+//#ifdef WIN32
+//#define WIN32_LEAN_AND_MEAN     // Exclude rarely-used stuff from Windows headers
+//#include <windows.h>
+//#else
 #include "winreplace.h"
-#endif
+//#endif
 
 //******************************************************************************************************************************
 //******************************************************************************************************************************
@@ -66,10 +66,10 @@ protected:
     virtual bool OnSysCommand (WPARAM wParam, LPARAM lParam);               // WM_SYSCOMMAND
     virtual void OnClose (WPARAM wParam, LPARAM lParam);                    // WM_CLOSE
     virtual void OnDestroy (WPARAM wParam, LPARAM lParam);                  // WM_DESTROY
-	#ifndef WIN32
+	//#ifndef WIN32
 	virtual void OnJoystickAxis (WPARAM wParam, LPARAM lParam);             // SDL_JOYAXISMOTION
     virtual void OnJoystickButton (WPARAM wParam, LPARAM lParam);           // SDL_JOYBUTTONDOWN/-UP
-	#endif
+	//#endif
     virtual void OnWindowActive (void);
 
 public:
@@ -80,11 +80,11 @@ public:
     void SetClientSize (int ClientWidth, int ClientHeight);
     void ShowWindow (void);
     void MessagePump (void);
-#ifdef WIN32
-    LRESULT CALLBACK WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam);
-#else
+//#ifdef WIN32
+    //LRESULT CALLBACK WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam);
+//#else
 	void WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam);
-#endif
+//#endif
 };  
 
 //******************************************************************************************************************************

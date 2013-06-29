@@ -93,21 +93,21 @@ SOCKET          ClientSocket = INVALID_SOCKET;
 //******************************************************************************************************************************
 
 
-#ifdef WIN32
-CGame::CGame (HINSTANCE hInstance, const char* pCommandLine) 
-     : CWindow (hInstance, pCommandLine, IDI_BOMBER) 
-#else
+//#ifdef WIN32
+//CGame::CGame (HINSTANCE hInstance, const char* pCommandLine) 
+     //: CWindow (hInstance, pCommandLine, IDI_BOMBER) 
+//#else
 CGame::CGame (HINSTANCE hInstance, char** pCommandLine) 
      : CWindow (hInstance, "Bomberman", IDI_BOMBER) 
-#endif
+//#endif
 {
     m_GameMode = GAMEMODE_NONE;
     m_hModule = NULL;    
-#ifdef WIN32
-    m_hInstance = hInstance;
-#else
+//#ifdef WIN32
+    //m_hInstance = hInstance;
+//#else
     m_hInstance = NULL;
-#endif
+//#endif
     SEED_RANDOM((unsigned)time(NULL));
     
     //
@@ -167,12 +167,12 @@ CGame::CGame (HINSTANCE hInstance, char** pCommandLine)
     }
 #endif
 
-#ifdef WIN32
-    SetWindowText( m_hWnd, windowTitle.c_str() );
-#else
+//#ifdef WIN32
+    //SetWindowText( m_hWnd, windowTitle.c_str() );
+//#else
     // keep the window text in mind
     m_WindowTitle = windowTitle;
-#endif
+//#endif
 
 }
 
@@ -192,22 +192,22 @@ CGame::~CGame ()
 /**
  *  \brief Creates the main parts of the game and establishes relationships to members
  **/
-#ifdef WIN32
-bool CGame::Create (const char* pCommandLine)
-#else
+//#ifdef WIN32
+//bool CGame::Create (const char* pCommandLine)
+//#else
 bool CGame::Create (char **pCommandLine, int pCommandLineCount)
-#endif
+//#endif
 {
     // If certain strings are detected in the command line arguments...
     // There is no check if the parameters are surrounded by spaces, or at the beginning of the line,
     // or the end. So "-----__/-h999" would also match (the -h is found).
-#ifdef WIN32
-    if ( strstr( pCommandLine, "-h" ) != NULL  ||  
-         strstr( pCommandLine, "--help" ) != NULL  ||  // Not really necessary, since "-h" already did the job
-         strstr( pCommandLine, "--license" ) != NULL  ||
-         strstr( pCommandLine, "--show-license" ) != NULL  ||
-         strstr( pCommandLine, "/?" ) != NULL )
-#else
+//#ifdef WIN32
+    //if ( strstr( pCommandLine, "-h" ) != NULL  ||  
+         //strstr( pCommandLine, "--help" ) != NULL  ||  // Not really necessary, since "-h" already did the job
+         //strstr( pCommandLine, "--license" ) != NULL  ||
+         //strstr( pCommandLine, "--show-license" ) != NULL  ||
+         //strstr( pCommandLine, "/?" ) != NULL )
+//#else
     bool helpRequested = false;
 
     for (int i = 0; i < pCommandLineCount; i++)
@@ -223,14 +223,14 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
         }
     }
     if (helpRequested)
-#endif
+//#endif
     {
         // Display a message box
-#ifdef WIN32
-        MessageBox( NULL,
-#else
+//#ifdef WIN32
+        //MessageBox( NULL,
+//#else
 				fprintf(stdout,
-#endif
+//#endif
             "Bombermaaan\n"
             "Copyright (C) 2000-2002, 2007 Thibaut Tollemer\n"
             "Copyright (C) 2007, 2008 Bernd Arnold\n"
@@ -249,11 +249,11 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
             "\n"
             "You should have received a copy of the GNU General Public License\n"
             "along with Bombermaaan.  If not, see <http://www.gnu.org/licenses/>.\n"
-#ifdef WIN32
-						, "Bombermaaan", MB_ICONINFORMATION);
-#else
+//#ifdef WIN32
+						//, "Bombermaaan", MB_ICONINFORMATION);
+//#else
 						);
-#endif
+//#endif
         // Return false so the program will terminate after the message box was closed
         return false;
     }
@@ -390,13 +390,13 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
         const char *appDataPath = getenv( "HOME" );
 #endif
         if ( ! appDataPath ) {
-#ifdef WIN32
-            MessageBox( m_hWnd, 
-                        "Could not get the user application folder (%APPDATA%).\nBombermaaan terminates.", 
-                        "Error", MB_OK | MB_ICONERROR );
-#else
+//#ifdef WIN32
+            //MessageBox( m_hWnd, 
+                        //"Could not get the user application folder (%APPDATA%).\nBombermaaan terminates.", 
+                        //"Error", MB_OK | MB_ICONERROR );
+//#else
             fprintf(stderr, "Could not determine home directory ($HOME).\nBombermaaan terminates.\n");
-#endif
+//#endif
             return false;
         }
 
@@ -510,8 +510,9 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
         return false;
     }
 
-    if ((SDL_Init(SDL_INIT_AUDIO) == -1)) // in WIN32 we need AUDIO for SDL_mixer (replacing FMOD)
 #else
+    //if ((SDL_Init(SDL_INIT_AUDIO) == -1)) // in WIN32 we need AUDIO for SDL_mixer (replacing FMOD)
+//#else
     if ((SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO|SDL_INIT_JOYSTICK) == -1))
 #endif
     { 
@@ -527,22 +528,22 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
     }
 
     // Set the objects the input object has to communicate with
-#ifdef WIN32
-    m_Input.SetInstanceHandle (m_hInstance);
-    m_Input.SetWindowHandle (m_hWnd);
-#endif
+//#ifdef WIN32
+    //m_Input.SetInstanceHandle (m_hInstance);
+    //m_Input.SetWindowHandle (m_hWnd);
+//#endif
 	
     m_Input.SetOptions (&m_Options);
     m_Input.SetTimer (&m_Timer);
 
     // Set the objects the display object has to communicate with
-#ifdef WIN32
-    m_Display.SetWindowHandle (m_hWnd);
-    m_Display.SetModuleHandle (m_hModule);
-#else
+//#ifdef WIN32
+    //m_Display.SetWindowHandle (m_hWnd);
+    //m_Display.SetModuleHandle (m_hModule);
+//#else
     m_Display.SetModuleHandle (NULL);
     SDL_WM_SetCaption(m_WindowTitle.c_str(), NULL);
-#endif
+//#endif
 
     // Set the objects the match object has to communicate with
     m_Match.SetDisplay (&m_Display);
@@ -617,11 +618,11 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
     m_MenuYesNo.SetSound (&m_Sound);
     
     // Set the objects the sound object has to communicate with
-#ifdef WIN32
-    m_Sound.SetModuleHandle (m_hModule);
-#else
+//#ifdef WIN32
+    //m_Sound.SetModuleHandle (m_hModule);
+//#else
     m_Sound.SetModuleHandle (NULL);
-#endif
+//#endif
 	
     // If creating the display and setting the display mode failed
     if (!m_Display.Create (m_Options.GetDisplayMode()))
@@ -657,25 +658,25 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
     m_MenuYesNo.Create ();
 
     char IpAddressString[32];
-#ifdef WIN32
-    const char *pos = strstr(pCommandLine, "-c");
-    if (pos == NULL) pos = strstr(pCommandLine, "--client");
-    
-    // client mode and ip address given?
-    if (pos != NULL && strlen(pCommandLine) > (unsigned int)(pos - pCommandLine + 2))
-    {
-        OutputDebugString("*** STARTING GAME AS CLIENT\n");
-        NetworkMode = NETWORKMODE_CLIENT;
-
-        strcpy(IpAddressString, strstr(pCommandLine, "-c") + 3);
-    }
-	else if (strstr(pCommandLine, "-s") != NULL ||
-             strstr(pCommandLine, "--server") != NULL)
-    {
-		OutputDebugString("*** STARTING GAME AS SERVER\n");
-        NetworkMode = NETWORKMODE_SERVER;
-    }
-#else
+//#ifdef WIN32
+    //const char *pos = strstr(pCommandLine, "-c");
+    //if (pos == NULL) pos = strstr(pCommandLine, "--client");
+    //
+    //// client mode and ip address given?
+    //if (pos != NULL && strlen(pCommandLine) > (unsigned int)(pos - pCommandLine + 2))
+    //{
+        //OutputDebugString("*** STARTING GAME AS CLIENT\n");
+        //NetworkMode = NETWORKMODE_CLIENT;
+//
+        //strcpy(IpAddressString, strstr(pCommandLine, "-c") + 3);
+    //}
+	//else if (strstr(pCommandLine, "-s") != NULL ||
+             //strstr(pCommandLine, "--server") != NULL)
+    //{
+		//OutputDebugString("*** STARTING GAME AS SERVER\n");
+        //NetworkMode = NETWORKMODE_SERVER;
+    //}
+//#else
     for (int i = 0; i < pCommandLineCount; i++)
 	{
         if (strncmp(pCommandLine[i], "-s", 2) == 0 ||
@@ -696,19 +697,19 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
             break;
         }
     }
-#endif
+//#endif
     
     if (NetworkMode != NETWORKMODE_LOCAL)
     {
-#ifdef WIN32
-		WSAData WsaData;
-    
-        if (WSAStartup(MAKEWORD(1, 1), &WsaData) != 0) 
-        {
-            theConsole.Write("WSAStartup failed\n");
-            return false;
-        }
-#endif
+//#ifdef WIN32
+		//WSAData WsaData;
+    //
+        //if (WSAStartup(MAKEWORD(1, 1), &WsaData) != 0) 
+        //{
+            //theConsole.Write("WSAStartup failed\n");
+            //return false;
+        //}
+//#endif
 
         MySocket = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -730,11 +731,11 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
             if (bind(MySocket, (LPSOCKADDR)&SocketAddress, sizeof(SOCKADDR)) == SOCKET_ERROR) 
             {
                 theConsole.Write("bind failed\n");
-#ifdef WIN32
-                closesocket(MySocket);
-#else
+//#ifdef WIN32
+                //closesocket(MySocket);
+//#else
                 close(MySocket);
-#endif
+//#endif
                 return false;
             }
 
@@ -743,11 +744,11 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
             if (listen(MySocket, SOMAXCONN) == SOCKET_ERROR)
             {
                 theConsole.Write("listen failed\n");
-#ifdef WIN32
-                closesocket(MySocket);
-#else
+//#ifdef WIN32
+                //closesocket(MySocket);
+//#else
                 close(MySocket);
-#endif
+//#endif
                 return false;
             }
 
@@ -756,11 +757,11 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
             SOCKADDR_IN Address;
             int Size = sizeof(SOCKADDR);
 
-#ifdef WIN32
-            ClientSocket = accept(MySocket, (LPSOCKADDR)&Address, &Size);
-#else
+//#ifdef WIN32
+            //ClientSocket = accept(MySocket, (LPSOCKADDR)&Address, &Size);
+//#else
             ClientSocket = accept(MySocket, (LPSOCKADDR)&Address, (socklen_t *)&Size);
-#endif
+//#endif
 
             if (ClientSocket == INVALID_SOCKET) 
             {
@@ -831,22 +832,22 @@ void CGame::Destroy (void)
 
     if (NetworkMode != NETWORKMODE_LOCAL)
     {
-#ifdef WIN32
-        closesocket(MySocket);
-        closesocket(ClientSocket);
-
-        if (WSACleanup() == SOCKET_ERROR) 
-        {
-            if (WSAGetLastError() == WSAEINPROGRESS) 
-            {
-                WSACancelBlockingCall();
-                WSACleanup();
-            }
-        }
-#else
+//#ifdef WIN32
+        //closesocket(MySocket);
+        //closesocket(ClientSocket);
+//
+        //if (WSACleanup() == SOCKET_ERROR) 
+        //{
+            //if (WSAGetLastError() == WSAEINPROGRESS) 
+            //{
+                //WSACancelBlockingCall();
+                //WSACleanup();
+            //}
+        //}
+//#else
         close(MySocket);
         close(ClientSocket);
-#endif
+//#endif
     }
 
 #ifdef ENABLE_SOUND
@@ -870,9 +871,9 @@ void CGame::Destroy (void)
     if (m_hModule != NULL)
     {
         // Close the connection to the resources
-#ifdef WIN32
-        FreeLibrary (m_hModule);
-#endif
+//#ifdef WIN32
+        //FreeLibrary (m_hModule);
+//#endif
         m_hModule = NULL;
     }
 
@@ -1003,16 +1004,16 @@ void CGame::StartGameMode (EGameMode GameMode)
         m_Display.Create (DISPLAYMODE_WINDOWED);
 
         // Close the window
-#ifdef WIN32
-        PostMessage (m_hWnd, WM_CLOSE, 0, 0);
-#else
+//#ifdef WIN32
+        //PostMessage (m_hWnd, WM_CLOSE, 0, 0);
+//#else
         SDL_Event quitevent;
 
         quitevent.type = SDL_QUIT;
         quitevent.quit.type = SDL_QUIT;
 
         SDL_PushEvent(&quitevent);
-#endif
+//#endif
     }
     // If we don't have to exit the game
     else
@@ -1127,7 +1128,7 @@ void CGame::OnMove (WPARAM wParam, LPARAM lParam)
 
 void CGame::OnKeyDown (WPARAM wParam, LPARAM lParam)
 {
-#ifndef WIN32
+//#ifndef WIN32
     if (wParam >= 0 && wParam < MAX_KEYS) {
         CMainInput m_pMainInput = m_Input.GetMainInput();
 
@@ -1150,7 +1151,7 @@ void CGame::OnKeyDown (WPARAM wParam, LPARAM lParam)
         }
 
     }
-#endif
+//#endif
 }
 
 
@@ -1170,7 +1171,7 @@ void CGame::OnKeyUp (WPARAM wParam, LPARAM lParam)
 
 #endif // ENABLE_DEBUG_KEYS
     
-#ifndef WIN32
+//#ifndef WIN32
     if (wParam >= 0 && wParam < MAX_KEYS) {
         CMainInput m_pMainInput = m_Input.GetMainInput();
         CSDLInput *m_pDirectInput = m_pMainInput.GetDirectInput();
@@ -1191,14 +1192,14 @@ void CGame::OnKeyUp (WPARAM wParam, LPARAM lParam)
             m_pPlayerInput.Update();
         }
     }
-#endif
+//#endif
 
     // If the CTRL key is not pressed while the key specified by wParam is released
-#ifdef WIN32
-    if (!(GetKeyState(VK_CONTROL) & 0x8000))
-#else
+//#ifdef WIN32
+    //if (!(GetKeyState(VK_CONTROL) & 0x8000))
+//#else
     if (!(lParam & KMOD_CTRL))
-#endif
+//#endif
     {
         EDisplayMode DisplayMode = DISPLAYMODE_NONE;
         
@@ -1273,19 +1274,19 @@ void CGame::OnPaint (WPARAM wParam, LPARAM lParam)
 bool CGame::OnSysCommand (WPARAM wParam, LPARAM lParam)
 {
     // Check what is the system command
-#ifdef WIN32
-    switch (wParam)
-    {
+//#ifdef WIN32
+    //switch (wParam)
+    //{
         // If it's a monitor power command or a screen saver execution
-        case SC_MONITORPOWER :
-        case SC_SCREENSAVE :
-        {
+        //case SC_MONITORPOWER :
+        //case SC_SCREENSAVE :
+        //{
             // Do NOT let Windows handle these commands in order
             // to disable these two system commands when the game is running
-            return false;
-        }
-    }
-#endif
+            //return false;
+        //}
+    //}
+//#endif
 
     // Make Windows handle these commands
     return true;
@@ -1300,10 +1301,10 @@ bool CGame::OnSysCommand (WPARAM wParam, LPARAM lParam)
 
 void CGame::OnSize (WPARAM wParam, LPARAM lParam) 
 { 
-#ifndef WIN32
+//#ifndef WIN32
   // Rework necessary
   // Removed due to B
-#endif
+//#endif
 }
 
 
@@ -1313,7 +1314,7 @@ void CGame::OnSize (WPARAM wParam, LPARAM lParam)
 
 // When the window is active and a jostick axis changes,
 // this method will be called.
-#ifndef WIN32
+//#ifndef WIN32
 void CGame::OnJoystickAxis (WPARAM wParam, LPARAM lParam)
 {
 	SDL_JoyAxisEvent *jaxis;
@@ -1355,7 +1356,7 @@ void CGame::OnJoystickAxis (WPARAM wParam, LPARAM lParam)
 		
 	return;
 }
-#endif
+//#endif
 
 //******************************************************************************************************************************
 //******************************************************************************************************************************
@@ -1364,7 +1365,7 @@ void CGame::OnJoystickAxis (WPARAM wParam, LPARAM lParam)
 // When the window is active and a jostick button is pressed/released,
 // this method will be called.
 
-#ifndef WIN32
+//#ifndef WIN32
 void CGame::OnJoystickButton (WPARAM wParam, LPARAM lParam)
 {
 	SDL_JoyButtonEvent *jbutton;
@@ -1396,7 +1397,7 @@ void CGame::OnJoystickButton (WPARAM wParam, LPARAM lParam)
 	m_pPlayerInput.Update();
 		
 }
-#endif
+//#endif
 
 //******************************************************************************************************************************
 //******************************************************************************************************************************

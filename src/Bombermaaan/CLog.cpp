@@ -100,9 +100,9 @@ bool CLog::Open( const char *pFilename )
     }
 
     // Make sure the file is NOT read-only
-#ifdef WIN32
-    SetFileAttributes( pFilename, FILE_ATTRIBUTE_NORMAL );
-#endif
+//#ifdef WIN32
+    //SetFileAttributes( pFilename, FILE_ATTRIBUTE_NORMAL );
+//#endif
 
     // Open the Log
     m_theLog.open( pFilename );
@@ -112,28 +112,28 @@ bool CLog::Open( const char *pFilename )
         m_bOpen = true;
 
         // Get current time
-#ifdef WIN32
-        SYSTEMTIME LocalTime;
-        GetLocalTime (&LocalTime);
-#else
+//#ifdef WIN32
+        //SYSTEMTIME LocalTime;
+        //GetLocalTime (&LocalTime);
+//#else
         struct tm *LocalTime;
         time_t curTime = time(NULL);
         LocalTime = localtime(&curTime);
-#endif
+//#endif
         
         // Store first log entry
         char FirstLogEntry [128];
-#ifdef WIN32
-        sprintf( FirstLogEntry,                                              // String where to write
-                 "==> Log started on %4d-%02d-%02d at %02d:%02d:%02d.\n\n",  // Format to use
-                 LocalTime.wYear, LocalTime.wMonth, LocalTime.wDay,          // Time numbers to use
-                 LocalTime.wHour, LocalTime.wMinute, LocalTime.wSecond );
-#else
+//#ifdef WIN32
+        //sprintf( FirstLogEntry,                                              // String where to write
+                 //"==> Log started on %4d-%02d-%02d at %02d:%02d:%02d.\n\n",  // Format to use
+                 //LocalTime.wYear, LocalTime.wMonth, LocalTime.wDay,          // Time numbers to use
+                 //LocalTime.wHour, LocalTime.wMinute, LocalTime.wSecond );
+//#else
         sprintf( FirstLogEntry,                                                     // String where to write
                  "==> Log started on %4d-%02d-%02d at %02d:%02d:%02d.\n\n",         // Format to use
                  LocalTime->tm_year + 1900, LocalTime->tm_mon, LocalTime->tm_mday,  // Time numbers to use
                  LocalTime->tm_hour, LocalTime->tm_min, LocalTime->tm_sec );
-#endif
+//#endif
         
         // Write first log entry
         m_theLog.write( FirstLogEntry, strlen( FirstLogEntry ) );
@@ -161,28 +161,28 @@ bool CLog::Close()
         m_theLog.write( "\n", 1 );
         
         // Get current time
-#ifdef WIN32
-        SYSTEMTIME LocalTime;
-        GetLocalTime (&LocalTime);
-#else
+//#ifdef WIN32
+        //SYSTEMTIME LocalTime;
+        //GetLocalTime (&LocalTime);
+//#else
         struct tm *LocalTime;
         time_t curTime = time(NULL);
         LocalTime = localtime(&curTime);
-#endif
+//#endif
         
         // Store last log entry
         char LastLogEntry [128];
-#ifdef WIN32
-        sprintf( LastLogEntry,                                             // String where to write
-                 "==> Log ended on %4d-%02d-%02d at %02d:%02d:%02d.\n\n",  // Format to use
-                 LocalTime.wYear, LocalTime.wMonth, LocalTime.wDay,        // Time numbers to use
-                 LocalTime.wHour, LocalTime.wMinute, LocalTime.wSecond );
-#else
+//#ifdef WIN32
+        //sprintf( LastLogEntry,                                             // String where to write
+                 //"==> Log ended on %4d-%02d-%02d at %02d:%02d:%02d.\n\n",  // Format to use
+                 //LocalTime.wYear, LocalTime.wMonth, LocalTime.wDay,        // Time numbers to use
+                 //LocalTime.wHour, LocalTime.wMinute, LocalTime.wSecond );
+//#else
         sprintf( LastLogEntry,                                                      // String where to write
                  "==> Log ended on %4d-%02d-%02d at %02d:%02d:%02d.\n\n",           // Format to use
                  LocalTime->tm_year + 1900, LocalTime->tm_mon, LocalTime->tm_mday,  // Time numbers to use
                  LocalTime->tm_hour, LocalTime->tm_min, LocalTime->tm_sec );
-#endif
+//#endif
         
         // Write last log entry
         m_theLog.write( LastLogEntry, strlen( LastLogEntry ) );
@@ -203,27 +203,27 @@ bool CLog::Close()
 //! Log the last error, which can be found by calling the WINAPI function GetLastError().
 void CLog::LogLastError()
 {
-#ifdef WIN32
+//#ifdef WIN32
     // Declare variables
-    LPVOID lpMsgBuf;
+    //LPVOID lpMsgBuf;
 
-    FormatMessage(  FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-                    NULL,
+    //FormatMessage(  FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+                    //NULL,
 
-                    GetLastError(),
-                    MAKELANGID( LANG_NEUTRAL, SUBLANG_DEFAULT ), // Default language
-                    (char *) &lpMsgBuf,
-                    0,
-                    NULL );
+                    //GetLastError(),
+                    //MAKELANGID( LANG_NEUTRAL, SUBLANG_DEFAULT ), // Default language
+                    //(char *) &lpMsgBuf,
+                    //0,
+                    //NULL );
 
     // Log the error
-    WriteLine( (const char *) lpMsgBuf );
+    //WriteLine( (const char *) lpMsgBuf );
 
     // Free the buffer.
-    LocalFree( lpMsgBuf );
-#else
+    //LocalFree( lpMsgBuf );
+//#else
     WriteLine( (const char *) strerror( errno ) );
-#endif
+//#endif
 }
 
 //******************************************************************************************************************************
@@ -246,30 +246,30 @@ long CLog::Write( const char *pMessage, ... )
         if( Message[0] != '\n' )
         {
             // Get current time
-#ifdef WIN32
-            SYSTEMTIME LocalTime;
-            GetLocalTime (&LocalTime);
-#else
+//#ifdef WIN32
+            //SYSTEMTIME LocalTime;
+            //GetLocalTime (&LocalTime);
+//#else
             struct tm *LocalTime;
             time_t curTime = time(NULL);
             LocalTime = localtime(&curTime);
-#endif
+//#endif
     
             // Store the time string
             char Time [64];
-#ifdef WIN32
-            sprintf ( Time,                 // String where to write
-                      "%02d:%02d:%02d\n",   // Format (don't forget '\n' character!)
-                      LocalTime.wHour,      // Time numbers to use
-                      LocalTime.wMinute, 
-                      LocalTime.wSecond );
-#else
+//#ifdef WIN32
+            //sprintf ( Time,                 // String where to write
+                      //"%02d:%02d:%02d\n",   // Format (don't forget '\n' character!)
+                      //LocalTime.wHour,      // Time numbers to use
+                      //LocalTime.wMinute, 
+                      //LocalTime.wSecond );
+//#else
             sprintf ( Time,                 // String where to write
                       "%02d:%02d:%02d\n",   // Format (don't forget '\n' character!)
                       LocalTime->tm_hour,   // Time numbers to use
                       LocalTime->tm_min, 
                       LocalTime->tm_sec );
-#endif
+//#endif
             
             // Write the time string
             m_theLog.write( Time, strlen( Time ) );
@@ -320,30 +320,30 @@ long CLog::WriteLine( const char *pMessage, ... )
         if( Message[0] != '\n' )
         {
             // Get current time
-#ifdef WIN32
-            SYSTEMTIME LocalTime;
-            GetLocalTime (&LocalTime);
-#else
+//#ifdef WIN32
+            //SYSTEMTIME LocalTime;
+            //GetLocalTime (&LocalTime);
+//#else
             struct tm *LocalTime;
             time_t curTime = time(NULL);
             LocalTime = localtime(&curTime);
-#endif
+//#endif
     
             // Store the time string
             char Time [64];
-#ifdef WIN32
-            sprintf ( Time,                 // String where to write
-                      "%02d:%02d:%02d  ",   // Format
-                      LocalTime.wHour,      // Time numbers to use
-                      LocalTime.wMinute, 
-                      LocalTime.wSecond);
-#else
+//#ifdef WIN32
+            //sprintf ( Time,                 // String where to write
+                      //"%02d:%02d:%02d  ",   // Format
+                      //LocalTime.wHour,      // Time numbers to use
+                      //LocalTime.wMinute, 
+                      //LocalTime.wSecond);
+//#else
             sprintf ( Time,                 // String where to write
                       "%02d:%02d:%02d  ",   // Format (don't forget '\n' character!)
                       LocalTime->tm_hour,   // Time numbers to use
                       LocalTime->tm_min, 
                       LocalTime->tm_sec);
-#endif
+//#endif
             
             // Write the time string
             m_theLog.write( Time, strlen( Time ) );
@@ -394,30 +394,30 @@ long CLog::WriteDebugMsg( EDebugSection section, const char *pMessage, ... )
         if( Message[0] != '\n' )
         {
             // Get current time
-#ifdef WIN32
-            SYSTEMTIME LocalTime;
-            GetLocalTime (&LocalTime);
-#else
+//#ifdef WIN32
+            //SYSTEMTIME LocalTime;
+            //GetLocalTime (&LocalTime);
+//#else
             struct tm *LocalTime;
             time_t curTime = time(NULL);
             LocalTime = localtime(&curTime);
-#endif
+//#endif
     
             // Store the time string
             char Time [64];
-#ifdef WIN32
-            sprintf ( Time,                 // String where to write
-                      "%02d:%02d:%02d  ",   // Format
-                      LocalTime.wHour,      // Time numbers to use
-                      LocalTime.wMinute, 
-                      LocalTime.wSecond);
-#else
+//#ifdef WIN32
+            //sprintf ( Time,                 // String where to write
+                      //"%02d:%02d:%02d  ",   // Format
+                      //LocalTime.wHour,      // Time numbers to use
+                      //LocalTime.wMinute, 
+                      //LocalTime.wSecond);
+//#else
             sprintf ( Time,                 // String where to write
                       "%02d:%02d:%02d  ",   // Format (don't forget '\n' character!)
                       LocalTime->tm_hour,   // Time numbers to use
                       LocalTime->tm_min, 
                       LocalTime->tm_sec);
-#endif
+//#endif
             
             // Write the time string
             m_theLog.write( Time, strlen( Time ) );

@@ -122,11 +122,11 @@ void CMatch::Create (void)
             m_pOptions->SetBomberType(0, BOMBERTYPE_MAN);
             m_pOptions->SetBomberType(1, BOMBERTYPE_NET);
 
-#ifdef WIN32
-            DWORD TickCount = GetTickCount();
-#else
+//#ifdef WIN32
+            //DWORD TickCount = GetTickCount();
+//#else
             DWORD TickCount = time(NULL);
-#endif
+//#endif
             send(ClientSocket, (const char*)&TickCount, sizeof(DWORD), 0);
             SEED_RANDOM(TickCount);
         }
@@ -137,13 +137,13 @@ void CMatch::Create (void)
         
             DWORD TickCount;
             int Received = recv(MySocket, (char*)&TickCount, sizeof(DWORD), 0);
-#ifdef WIN32
-                if (Received == SOCKET_ERROR)
-                    theConsole.Write("recv error : %d\n", WSAGetLastError());
-#else
+//#ifdef WIN32
+                //if (Received == SOCKET_ERROR)
+                    //theConsole.Write("recv error : %d\n", WSAGetLastError());
+//#else
                 if (Received == -1)
                     theConsole.Write("recv error : %d\n", Received);
-#endif
+//#endif
             SEED_RANDOM(TickCount);
         }
     }
@@ -495,19 +495,19 @@ void CMatch::ProcessPlayerCommands (void)
                 
                 do {
                     Received += recv(ClientSocket, &recvBuf[Received], bufsize, 0);
-#ifdef WIN32
-                    if (Received == SOCKET_ERROR)
-                    {
-                        theConsole.Write("recv error : %d\n", WSAGetLastError());
-                        break;
-                    }
-#else
+//#ifdef WIN32
+                    //if (Received == SOCKET_ERROR)
+                    //{
+                        //theConsole.Write("recv error : %d\n", WSAGetLastError());
+                        //break;
+                    //}
+//#else
                     if (Received == -1)
                     {
                         theConsole.Write("recv error : %d\n", Received);
                         break;
                     }
-#endif
+//#endif
                     bufsize -= Received;
                 }
                 while ((unsigned int)Received < sizeof(CommandChunk));
@@ -543,26 +543,26 @@ void CMatch::ProcessPlayerCommands (void)
                 // Make a snapshot of the arena and send it to the client
                 m_Arena.WriteSnapshot(Snapshot);
                 int Sent = send(ClientSocket, (const char*)&Snapshot, sizeof(Snapshot), 0);
-#ifdef WIN32
-                if (Sent == SOCKET_ERROR)
-                    theConsole.Write("sent error : %d\n", WSAGetLastError());
-#else
+//#ifdef WIN32
+                //if (Sent == SOCKET_ERROR)
+                    //theConsole.Write("sent error : %d\n", WSAGetLastError());
+//#else
                 if (Sent == -1)
                     theConsole.Write("sent error : %d\n", Sent);
-#endif
+//#endif
 
             }
             else if (NetworkMode == NETWORKMODE_CLIENT)
             {
                 // Send client command chunk to the server
                 int Sent = send(MySocket, (const char*)&CommandChunk, sizeof(CommandChunk), 0);
-#ifdef WIN32
-                if (Sent == SOCKET_ERROR)
-                    theConsole.Write("sent error : %d\n", WSAGetLastError());
-#else
+//#ifdef WIN32
+                //if (Sent == SOCKET_ERROR)
+                    //theConsole.Write("sent error : %d\n", WSAGetLastError());
+//#else
                 if (Sent == -1)
                     theConsole.Write("sent error : %d\n", Sent);
-#endif
+//#endif
                 
                 // Command chunk was sent, reset it.
                 CommandChunk.Reset();
@@ -574,19 +574,19 @@ void CMatch::ProcessPlayerCommands (void)
                 
                 do {
                     Received += recv(MySocket, &recvBuf[Received], bufsize, 0);
-#ifdef WIN32
-                    if (Received == SOCKET_ERROR)
-                    {
-                        theConsole.Write("recv error : %d\n", WSAGetLastError());
-                        break;
-                    }
-#else
+//#ifdef WIN32
+                    //if (Received == SOCKET_ERROR)
+                    //{
+                        //theConsole.Write("recv error : %d\n", WSAGetLastError());
+                        //break;
+                    //}
+//#else
                     if (Received == -1)
                     {
                         theConsole.Write("recv error : %d\n", Received);
                         break;
                     }
-#endif
+//#endif
                     bufsize -= Received;
                 }
                 while ((unsigned int)Received < sizeof(Snapshot));

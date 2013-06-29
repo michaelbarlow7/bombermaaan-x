@@ -36,14 +36,14 @@
 #include <assert.h>
 #include <time.h>
 
-#ifdef WIN32
-#include <winsock2.h>
+//#ifdef WIN32
+//#include <winsock2.h>
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <windowsx.h>  // GetWindowStyle(), GetWindowExStyle()
-#include <io.h>
-#else
+//#define WIN32_LEAN_AND_MEAN
+//#include <windows.h>
+//#include <windowsx.h>  // GetWindowStyle(), GetWindowExStyle()
+//#include <io.h>
+//#else
 #include "winreplace.h"
 #include <errno.h>
 #include <arpa/inet.h>
@@ -56,7 +56,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#endif
+//#endif
 
 #include <string>
 //#include <slist>
@@ -119,19 +119,19 @@ using namespace std;
 #include "CDebug.h"
 #include "CTimer.h"
 
-#if defined(WIN32) && !defined(CROSS)
-#  ifdef USE_32_PIXELS_PER_BLOCK
-#    include "..\RES32\resource.h"
-#  else
-#    include "..\RES\resource.h"
-#  endif
-#else
+//#if defined(WIN32) && !defined(CROSS)
+//#  ifdef USE_32_PIXELS_PER_BLOCK
+//#    include "..\RES32\resource.h"
+//#  else
+//#    include "..\RES\resource.h"
+//#  endif
+//#else
 #  ifdef USE_32_PIXELS_PER_BLOCK
 #    include "../RES32/resource.h"
 #  else
 #    include "../RES/resource.h"
 #  endif
-#endif
+//#endif
 #include "RESOURCE.H"
 
 // Originally taken from CGame.h

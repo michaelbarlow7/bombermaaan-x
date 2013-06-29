@@ -509,11 +509,11 @@ bool COptions::LoadLevels( std::string dynamicDataFolder, std::string pgmFolder 
     long FindHandle;
     _finddata_t FindData;
 
-#ifndef WIN32
+//#ifndef WIN32
     // initialise OUR data structure
     FindData.name = NULL;
     FindData.suffix = NULL;
-#endif
+//#endif
             
     //-------------------------------------------
     // Set the path where the level files are stored
@@ -526,17 +526,17 @@ bool COptions::LoadLevels( std::string dynamicDataFolder, std::string pgmFolder 
     {
         char delim = pgmFolder.c_str()[pgmFolder.length()-1];
         if (delim != '\\' && delim != '/')
-#ifdef WIN32
-            levelFilePath_pgmFolder.append("\\");
-#else
+//#ifdef WIN32
+            //levelFilePath_pgmFolder.append("\\");
+//#else
             levelFilePath_pgmFolder.append("/");
-#endif
+//#endif
     }
-#ifdef WIN32
-    levelFilePath_pgmFolder.append( "Levels\\" );
-#else
+//#ifdef WIN32
+    //levelFilePath_pgmFolder.append( "Levels\\" );
+//#else
     levelFilePath_pgmFolder.append( "Levels/" );
-#endif
+//#endif
     
     std::string levelFilePath_pgmFolderMask;
     levelFilePath_pgmFolderMask = levelFilePath_pgmFolder;
@@ -578,11 +578,11 @@ bool COptions::LoadLevels( std::string dynamicDataFolder, std::string pgmFolder 
 
         std::string levelFilePath_dynamicDataFolder;
         levelFilePath_dynamicDataFolder = dynamicDataFolder;
-#ifdef WIN32
-        levelFilePath_dynamicDataFolder.append( "Levels\\" );
-#else
+//#ifdef WIN32
+        //levelFilePath_dynamicDataFolder.append( "Levels\\" );
+//#else
         levelFilePath_dynamicDataFolder.append( "Levels/" );
-#endif
+//#endif
 
         std::string levelFilePath_dynamicDataFolderMask;
         levelFilePath_dynamicDataFolderMask = levelFilePath_dynamicDataFolder;

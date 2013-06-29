@@ -28,9 +28,9 @@
 #include "STDAFX.H"
 #include "CWindow.h"
 
-#ifndef WIN32
+//#ifndef WIN32
 #include "SDL.h"
-#endif
+//#endif
 
 //******************************************************************************************************************************
 //******************************************************************************************************************************
@@ -48,7 +48,7 @@
 // This hack was found in the source code of the Network tutorial of Dan Royer.
 // Dan Royer's homepage : http://members.home.com/droyer
 // Network tutorial found on Flipcode : http://www.flipcode.com/network
-#ifdef WIN32
+/*#ifdef WIN32
 static LRESULT CALLBACK DefaultWinProc (HWND hwnd, unsigned int msg, WPARAM wParam, LPARAM lParam) 
 {
     LPCREATESTRUCT lpcs;
@@ -72,7 +72,7 @@ static LRESULT CALLBACK DefaultWinProc (HWND hwnd, unsigned int msg, WPARAM wPar
         return pWindow->WinProc(msg, wParam, lParam );
     }
 }
-#endif
+#endif*/
 
 
 
@@ -87,7 +87,7 @@ CWindow::CWindow (HINSTANCE hInstance, const char *pWindowTitle, int IconResourc
     m_Active = false;
 
     // Init the window class
-#ifdef WIN32
+/*#ifdef WIN32
     WNDCLASSEX WndClassEx;
     WndClassEx.cbSize = sizeof(WNDCLASSEX);
     WndClassEx.lpszClassName = "Class name";
@@ -103,7 +103,7 @@ CWindow::CWindow (HINSTANCE hInstance, const char *pWindowTitle, int IconResourc
     WndClassEx.cbWndExtra = sizeof(CWindow *);  // We'll store the 'this' pointer in the extra allocated bytes
 
     // Prepare the window's styles (default ones)
-    DWORD Style = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU & ~WS_THICKFRAME & ~WS_MAXIMIZEBOX/* | WS_MINIMIZEBOX*/;
+    DWORD Style = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU & ~WS_THICKFRAME & ~WS_MAXIMIZEBOX*//* | WS_MINIMIZEBOX*//*;
     DWORD ExStyle = 0;
 
     // If registering the window class failed
@@ -148,7 +148,7 @@ CWindow::CWindow (HINSTANCE hInstance, const char *pWindowTitle, int IconResourc
         // Tell the window to set this icon
         PostMessage (m_hWnd, WM_SETICON, (WPARAM) ICON_BIG, (LPARAM) hIcon);
     }
-#endif
+#endif*/
     // the icon in Linux is loaded in CSDLVideo
 }
 
@@ -163,14 +163,14 @@ CWindow::CWindow (HINSTANCE hInstance, const char *pWindowTitle, int IconResourc
 CWindow::~CWindow ()
 {
     // If the window exists
-#ifdef WIN32
-    if (m_hWnd != NULL)
-    {
+//#ifdef WIN32
+    //if (m_hWnd != NULL)
+    //{
         // Destroy the window
-        DestroyWindow (m_hWnd);
-        m_hWnd = NULL;
-    }
-#endif
+        //DestroyWindow (m_hWnd);
+        //m_hWnd = NULL;
+    //}
+//#endif
 }
 
 
@@ -183,12 +183,12 @@ CWindow::~CWindow ()
 
 void CWindow::SetClientSize (int ClientWidth, int ClientHeight)
 {
-#ifdef WIN32
-    RECT rc;
-    SetRect (&rc, 0, 0, ClientWidth, ClientHeight);
-    AdjustWindowRectEx (&rc, GetWindowStyle(m_hWnd), (int)GetMenu (m_hWnd), GetWindowExStyle (m_hWnd));
-    SetWindowPos (m_hWnd, HWND_NOTOPMOST, 0, 0, rc.right - rc.left, rc.bottom - rc.top, SWP_NOMOVE);
-#endif
+//#ifdef WIN32
+    //RECT rc;
+    //SetRect (&rc, 0, 0, ClientWidth, ClientHeight);
+    //AdjustWindowRectEx (&rc, GetWindowStyle(m_hWnd), (int)GetMenu (m_hWnd), GetWindowExStyle (m_hWnd));
+    //SetWindowPos (m_hWnd, HWND_NOTOPMOST, 0, 0, rc.right - rc.left, rc.bottom - rc.top, SWP_NOMOVE);
+//#endif
 }
 
 
@@ -199,11 +199,11 @@ void CWindow::SetClientSize (int ClientWidth, int ClientHeight)
 
 
 
-#ifdef WIN32
-LRESULT CALLBACK CWindow::WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam) 
-#else
+//#ifdef WIN32
+//LRESULT CALLBACK CWindow::WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam) 
+//#else
 void CWindow::WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam)
-#endif
+//#endif
 {
     switch (msg) 
     {
@@ -219,18 +219,18 @@ void CWindow::WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam)
         case WM_SYSCOMMAND:     OnSysCommand (wParam, lParam);      break;
         case WM_CLOSE:          OnClose (wParam, lParam);           break;
         case WM_DESTROY:        OnDestroy (wParam, lParam);         break;
-#ifndef WIN32
+//#ifndef WIN32
         case SDL_JOYAXISMOTION: OnJoystickAxis(wParam, lParam);		break;
         case SDL_JOYBUTTONDOWN:
         case SDL_JOYBUTTONUP:	OnJoystickButton(wParam, lParam);	break;
-#endif
+//#endif
     }
 
-#ifdef WIN32
-        return DefWindowProc (m_hWnd, msg, wParam, lParam);
-#else
+//#ifdef WIN32
+        //return DefWindowProc (m_hWnd, msg, wParam, lParam);
+//#else
         return;
-#endif
+//#endif
 }
 
 //******************************************************************************************************************************
@@ -240,10 +240,10 @@ void CWindow::WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam)
 
 void CWindow::ShowWindow () 
 { 
-#ifdef WIN32
-    ::ShowWindow (m_hWnd, SW_SHOW); 
-    UpdateWindow (m_hWnd);
-#endif
+//#ifdef WIN32
+    //::ShowWindow (m_hWnd, SW_SHOW); 
+    //UpdateWindow (m_hWnd);
+//#endif
 }
 
 
@@ -259,7 +259,7 @@ void CWindow::ShowWindow ()
 
 void CWindow::MessagePump ()
 {
-#ifdef WIN32
+/*#ifdef WIN32
     MSG msg;
 
     while (true)
@@ -291,7 +291,7 @@ void CWindow::MessagePump ()
             }
         }
     }
-#else
+#else*/
     SDL_Event event;
     bool quit = false;
 
@@ -347,7 +347,7 @@ void CWindow::MessagePump ()
 	        SDL_Delay(1); // rest for the cpu
         }
     }
-#endif
+//#endif
 }
 
 
@@ -424,9 +424,9 @@ void CWindow::OnActivateApp (WPARAM wParam, LPARAM lParam)
 void CWindow::OnSize (WPARAM wParam, LPARAM lParam) 
 { 
     // Check to see if we are losing our window...
-#ifdef WIN32
-    m_Active = (wParam != SIZE_MAXHIDE && wParam != SIZE_MINIMIZED);
-#endif
+//#ifdef WIN32
+    //m_Active = (wParam != SIZE_MAXHIDE && wParam != SIZE_MINIMIZED);
+//#endif
 }
 
 
@@ -554,9 +554,9 @@ bool CWindow::OnSysCommand (WPARAM wParam, LPARAM lParam)
 
 void CWindow::OnClose (WPARAM wParam, LPARAM lParam) 
 { 
-#ifdef WIN32
-	DestroyWindow (m_hWnd); // Posts WM_DESTROY
-#endif
+//#ifdef WIN32
+	//DestroyWindow (m_hWnd); // Posts WM_DESTROY
+//#endif
 }
 
 
@@ -573,9 +573,9 @@ void CWindow::OnClose (WPARAM wParam, LPARAM lParam)
 
 void CWindow::OnDestroy (WPARAM wParam, LPARAM lParam) 
 { 
-#ifdef WIN32
-	PostQuitMessage (0); // Posts WM_QUIT
-#endif
+//#ifdef WIN32
+	//PostQuitMessage (0); // Posts WM_QUIT
+//#endif
 }
 
 
@@ -585,7 +585,7 @@ void CWindow::OnDestroy (WPARAM wParam, LPARAM lParam)
 //******************************************************************************************************************************
 
 
-#ifndef WIN32
+//#ifndef WIN32
 // Handles the SDL_JOYAXISMOTION message (SDL only).
 
 void CWindow::OnJoystickAxis (WPARAM wParam, LPARAM lParam) 
@@ -611,4 +611,4 @@ void CWindow::OnJoystickButton (WPARAM wParam, LPARAM lParam)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 //******************************************************************************************************************************
-#endif // WIN32
+//#endif // WIN32

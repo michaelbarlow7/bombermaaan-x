@@ -99,9 +99,9 @@ private:
     CDemo           m_Demo;                 //!< Demo screen object in which we show a match betweeen computer players.
     CMenuYesNo      m_MenuYesNo;            //!< Yes/No message box object
         
-#ifndef WIN32
+//#ifndef WIN32
     string          m_WindowTitle;
-#endif
+//#endif
 
     void            OnActivateApp  (WPARAM wParam, LPARAM lParam);
     void            OnMove         (WPARAM wParam, LPARAM lParam);
@@ -110,10 +110,10 @@ private:
     void            OnPaint        (WPARAM wParam, LPARAM lParam);
     bool            OnSysCommand   (WPARAM wParam, LPARAM lParam);
     void            OnSize         (WPARAM wParam, LPARAM lParam);
-#ifndef WIN32
+//#ifndef WIN32
     void            OnJoystickAxis (WPARAM wParam, LPARAM lParam);             // SDL_JOYAXISMOTION
     void            OnJoystickButton (WPARAM wParam, LPARAM lParam);       // SDL_JOYBUTTONDOWN/-UP
-#endif
+//#endif
     void            OnWindowActive (void);
     void            StartGameMode (EGameMode GameMode);
     void            FinishGameMode (void);
@@ -121,18 +121,18 @@ private:
 
 public:
 
-#ifdef WIN32
-                    CGame (HINSTANCE hInstance, const char* pCommandLine);
-#else
+//#ifdef WIN32
+                    //CGame (HINSTANCE hInstance, const char* pCommandLine);
+//#else
 					CGame (HINSTANCE hInstance, char **pCommandLine);
-#endif
+//#endif
 
     virtual         ~CGame (void);
-#ifdef WIN32
-	bool            Create (const char* pCommandLine);
-#else
+//#ifdef WIN32
+	//bool            Create (const char* pCommandLine);
+//#else
 	bool            Create (char **pCommandLine, int pCommandLineCount);
-#endif
+//#endif
 
     void            Destroy (void);
     inline void     SwitchToGameMode (EGameMode GameMode);

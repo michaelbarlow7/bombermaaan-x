@@ -2477,15 +2477,15 @@ void CAiBomber::SetComputerMode (EComputerMode ComputerMode)
 /*
     switch (m_ComputerMode)
     {
-#ifdef WIN32
-        case COMPUTERMODE_THINK     : WriteConsole ("MODE THINK\n");        break;
-        case COMPUTERMODE_ITEM      : WriteConsole ("MODE ITEM\n");         break;
-        case COMPUTERMODE_ATTACK    : WriteConsole ("MODE ATTACK\n");       break;
-        case COMPUTERMODE_THROW     : WriteConsole ("MODE THROW\n");        break;
-        case COMPUTERMODE_2NDACTION : WriteConsole ("MODE 2NDACTION\n");    break;
-        case COMPUTERMODE_DEFENCE   : WriteConsole ("MODE DEFENCE\n");      break;
-        case COMPUTERMODE_WALK      : WriteConsole ("MODE WALK\n");         break;
-#else
+//#ifdef WIN32
+        //case COMPUTERMODE_THINK     : WriteConsole ("MODE THINK\n");        break;
+        //case COMPUTERMODE_ITEM      : WriteConsole ("MODE ITEM\n");         break;
+        //case COMPUTERMODE_ATTACK    : WriteConsole ("MODE ATTACK\n");       break;
+        //case COMPUTERMODE_THROW     : WriteConsole ("MODE THROW\n");        break;
+        //case COMPUTERMODE_2NDACTION : WriteConsole ("MODE 2NDACTION\n");    break;
+        //case COMPUTERMODE_DEFENCE   : WriteConsole ("MODE DEFENCE\n");      break;
+        //case COMPUTERMODE_WALK      : WriteConsole ("MODE WALK\n");         break;
+//#else
         case COMPUTERMODE_THINK     : fprintf (stdout, "%d\tMODE THINK\n", m_Player);       break;
         case COMPUTERMODE_ITEM      : fprintf (stdout, "%d\tMODE ITEM\n", m_Player);        break;
         case COMPUTERMODE_ATTACK    : fprintf (stdout, "%d\tMODE ATTACK\n", m_Player);      break;
@@ -2493,7 +2493,7 @@ void CAiBomber::SetComputerMode (EComputerMode ComputerMode)
         case COMPUTERMODE_2NDACTION : fprintf (stdout, "%d\tMODE 2NDACTION\n", m_Player);   break;
         case COMPUTERMODE_DEFENCE   : fprintf (stdout, "%d\tMODE DEFENCE\n", m_Player);     break;
         case COMPUTERMODE_WALK      : fprintf (stdout, "%d\tMODE WALK\n", m_Player);        break;
-#endif
+//#endif
         default: break;
     }
 */

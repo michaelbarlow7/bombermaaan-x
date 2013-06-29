@@ -133,11 +133,11 @@ CDebug& CDebug::GetInstance()
 void CDebug::HandleKey (DWORD VirtualKeyCode, DWORD Modifier)
 {
     
-#ifdef WIN32
-    if (GetKeyState(VK_CONTROL) & 0x8000)
-#else
+//#ifdef WIN32
+    //if (GetKeyState(VK_CONTROL) & 0x8000)
+//#else
     if (Modifier & KMOD_CTRL)
-#endif
+//#endif
     {
         switch (VirtualKeyCode)
         {            

@@ -45,26 +45,26 @@
  *  \brief This is the main function of the executable file.
  */
 
-#ifdef WIN32
-int APIENTRY WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdline, int nCmdShow)
-#else
+//#ifdef WIN32
+//int APIENTRY WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdline, int nCmdShow)
+//#else
 int main (int argc, char **argv)
-#endif
+//#endif
 {
-#ifndef WIN32
+//#ifndef WIN32
     HINSTANCE hInstance = 0;
     char **lpCmdline = argv;
-#endif
+//#endif
 	
     // Create the CGame instance    
     CGame Game (hInstance, lpCmdline);
 
     // If creating the game failed
-#ifdef WIN32
-	if (!Game.Create(lpCmdline))
-#else
+//#ifdef WIN32
+	//if (!Game.Create(lpCmdline))
+//#else
 	if (!Game.Create(lpCmdline, argc))
-#endif
+//#endif
     {
         // Get out, failure
         return false;
