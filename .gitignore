@@ -4,3 +4,8 @@
 src/Bombermaaan/Bombermaaan
 src/RESGEN/ResGen
 src/RESGEN/libbombermaaan.so.1.0.0
+*.res
+*.dll
+*.exe
+src/Bombermaaan/log.txt
+*.xml

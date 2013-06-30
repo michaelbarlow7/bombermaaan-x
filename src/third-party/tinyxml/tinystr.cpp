@@ -27,7 +27,7 @@ distribution.
  */
 
 
-#include "STDAFX.H"
+#include "../../Bombermaaan/STDAFX.H"
 
 #ifndef TIXML_USE_STL
 

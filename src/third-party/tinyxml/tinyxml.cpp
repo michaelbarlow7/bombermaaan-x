@@ -22,7 +22,7 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
-#include "STDAFX.H"
+#include "../../Bombermaaan/STDAFX.H"
 
 #include <ctype.h>
 

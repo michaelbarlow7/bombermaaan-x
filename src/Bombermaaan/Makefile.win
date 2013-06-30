@@ -3,7 +3,8 @@
 
 # sprite size (16 or 32)
 SPRITESIZE = 32
-SDL_CONFIG = /opt/mingw32/SDL-1.2.13/bin/sdl-config
+#SDL_CONFIG = /opt/mingw32/SDL-1.2.13/bin/sdl-config
+SDL_CONFIG = sdl-config
 DIRECTX_LIB = ../../../DXSDK/LIB
 DIRECTX_INC = ../../../DXSDK/INCLUDE
 
