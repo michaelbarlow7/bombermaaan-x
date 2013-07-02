@@ -510,7 +510,7 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
         return false;
     }
 
-    if ((SDL_Init(SDL_INIT_AUDIO) == -1)) // in WIN32 we need AUDIO for SDL_mixer (replacing FMOD)
+    if ((SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) == -1)) // in WIN32 we need AUDIO for SDL_mixer (replacing FMOD)
 #else
     if ((SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO|SDL_INIT_JOYSTICK) == -1))
 #endif

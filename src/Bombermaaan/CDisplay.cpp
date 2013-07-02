@@ -61,42 +61,42 @@ CDisplay::~CDisplay (void)
 bool CDisplay::Create (int Width, int Height, bool FullScreen)
 {
     // Check if we have a connection with the resources
-#ifdef WIN32
-    ASSERT (m_hModule != NULL);
-#endif
+//#ifdef WIN32
+    //ASSERT (m_hModule != NULL);
+//#endif
     
     int Depth = (FullScreen ? 16 : 0);
 	
     // If no display mode has been set yet or the current display mode is not the right one
-#ifdef WIN32
-    if (!m_DirectDraw.IsModeSet (Width, Height, Depth, FullScreen))
-#else
+//#ifdef WIN32
+    //if (!m_DirectDraw.IsModeSet (Width, Height, Depth, FullScreen))
+//#else
     if (!m_SDLVideo.IsModeSet (Width, Height, Depth, FullScreen))
-#endif
+//#endif
     {
 		    // Destroy DirectDraw/SDLVideo interface and the sprite tables
         Destroy ();
                 
         // If DirectDraw/SDLVideo object creation failed
-#ifdef WIN32
-        if (!m_DirectDraw.Create (Width, Height, Depth, FullScreen))
-#else
+//#ifdef WIN32
+        //if (!m_DirectDraw.Create (Width, Height, Depth, FullScreen))
+//#else
         if (!m_SDLVideo.Create (Width, Height, Depth, FullScreen))
-#endif
+//#endif
         {
             // Get out
             return false;
         }
 
-#ifdef WIN32
+//#ifdef WIN32
         // Set the RGB color for transparent pixels in sprites
         // If it failed
-        if (!m_DirectDraw.SetTransparentColor (0, 255, 0))
-        {
+        //if (!m_DirectDraw.SetTransparentColor (0, 255, 0))
+        //{
             // Get out, it failed
-            return false;
-        }
-#endif        
+            //return false;
+        //}
+//#endif        
 
         // Load the sprite tables. If at least one sprite table could not be loaded
         if (
@@ -231,11 +231,11 @@ bool CDisplay::Create (int Width, int Height, bool FullScreen)
         m_ViewOriginX = (Width - VIEW_WIDTH) / 2;
         m_ViewOriginY = (Height - VIEW_HEIGHT) / 2;
 
-#ifdef WIN32
-        m_DirectDraw.SetOrigin (m_ViewOriginX, m_ViewOriginY);
-#else
+//#ifdef WIN32
+        //m_DirectDraw.SetOrigin (m_ViewOriginX, m_ViewOriginY);
+//#else
         m_SDLVideo.SetOrigin (m_ViewOriginX, m_ViewOriginY);
-#endif
+//#endif
     }
 
     // Everything went right
@@ -268,11 +268,11 @@ bool CDisplay::Create (EDisplayMode DisplayMode)
 void CDisplay::Destroy (void)
 {
     // Destroy DirectDraw/SDLVideo interface and the sprite tables
-#ifdef WIN32
-    m_DirectDraw.Destroy ();
-#else
+//#ifdef WIN32
+    //m_DirectDraw.Destroy ();
+//#else
     m_SDLVideo.Destroy ();
-#endif
+//#endif
 }
 
 //******************************************************************************************************************************
@@ -286,15 +286,15 @@ bool CDisplay::IsDisplayModeAvailable (EDisplayMode DisplayMode)
     // According to the display mode to test
     switch (DisplayMode)
     {
-#ifdef WIN32
-        case DISPLAYMODE_FULL1    : return m_DirectDraw.IsModeAvailable (320, 240, 16);
-        case DISPLAYMODE_FULL2    : return m_DirectDraw.IsModeAvailable (512, 384, 16);
-        case DISPLAYMODE_FULL3    : return m_DirectDraw.IsModeAvailable (640, 480, 16);
-#else
+//#ifdef WIN32
+        //case DISPLAYMODE_FULL1    : return m_DirectDraw.IsModeAvailable (320, 240, 16);
+        //case DISPLAYMODE_FULL2    : return m_DirectDraw.IsModeAvailable (512, 384, 16);
+        //case DISPLAYMODE_FULL3    : return m_DirectDraw.IsModeAvailable (640, 480, 16);
+//#else
         case DISPLAYMODE_FULL1    : return m_SDLVideo.IsModeAvailable (320, 240, 16);
         case DISPLAYMODE_FULL2    : return m_SDLVideo.IsModeAvailable (512, 384, 16);
         case DISPLAYMODE_FULL3    : return m_SDLVideo.IsModeAvailable (640, 480, 16);
-#endif
+//#endif
         case DISPLAYMODE_WINDOWED : return true;
         default                   : return false; // Should never happen
     }
@@ -328,11 +328,11 @@ bool CDisplay::LoadSprites (int SpriteTableWidth,
 #endif
     // Create the sprites by giving the sprite table information and the handle to the bitmap.
     // If it fails
-#ifdef WIN32
-    if (!m_DirectDraw.LoadSprites (SpriteTableWidth,
-#else
+//#ifdef WIN32
+    //if (!m_DirectDraw.LoadSprites (SpriteTableWidth,
+//#else
     if (!m_SDLVideo.LoadSprites (SpriteTableWidth,
-#endif
+//#endif
                                    SpriteTableHeight, 
                                    SpriteWidth, 
                                    SpriteHeight, 
