@@ -39,12 +39,12 @@ else
 	FLAGCROSS = 
 	SDL_LIB = -L../../../SDL-1.2.13/lib -lSDL -lSDL_mixer
 	SDL_INC = -I../../../SDL-1.2.13/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT
-	RM = del
+	RM = rm.exe -f
 endif
 RES  = Bombermaaan.res
-OBJ  = CBoard.o CClock.o CCloudManager.o CCommandChunk.o CControls.o CDemo.o CDrawGame.o CHurryMessage.o CLevel.o CMatch.o CMenu.o CMenuBase.o CMenuBomber.o CMenuInput.o CMenuLevel.o CMenuMatch.o CMenuYesNo.o CModeScreen.o CMosaic.o CPauseMessage.o CRandomMosaic.o CScroller.o CTitle.o CVictory.o CWinner.o CConsole.o CDirectDraw.o CDirectInput.o CLog.o CWindow.o CDebug.o CDisplay.o CFont.o CGame.o CInput.o CMainInput.o COptions.o CPlayerInput.o CScores.o CSound.o CArena.o CArenaCloser.o CArenaSnapshot.o CBomb.o CBomber.o CBomberMove.o CElement.o CExplosion.o CFloor.o CItem.o CWall.o CAiArena.o CAiBomber.o CAiManager.o WinMain.o CSDLVideo.o
+OBJ  = CBoard.o CClock.o CCloudManager.o CCommandChunk.o CControls.o CDemo.o CDrawGame.o CHurryMessage.o CLevel.o CMatch.o CMenu.o CMenuBase.o CMenuBomber.o CMenuInput.o CMenuLevel.o CMenuMatch.o CMenuYesNo.o CModeScreen.o CMosaic.o CPauseMessage.o CRandomMosaic.o CScroller.o CTitle.o CVictory.o CWinner.o CConsole.o CDirectDraw.o CDirectInput.o CLog.o CWindow.o CDebug.o CDisplay.o CFont.o CGame.o CInput.o CMainInput.o COptions.o CPlayerInput.o CScores.o CSound.o CArena.o CArenaCloser.o CArenaSnapshot.o CBomb.o CBomber.o CBomberMove.o CElement.o CExplosion.o CFloor.o CItem.o CWall.o CAiArena.o CAiBomber.o CAiManager.o WinMain.o CSDLVideo.o 
 SRC  = $(OBJ:%.o=%.cpp) STDAFX.CPP
-LINKOBJ = $(OBJ) $(RES) STDAFX.o $(TINYXML_PATH)/tinystr.o $(TINYXML_PATH)/tinyxmlerror.o $(TINYXML_PATH)/tinyxml.o $(TINYXML_PATH)/tinyxmlparser.o
+LINKOBJ = $(OBJ) $(RES) STDAFX.o $(TINYXML_PATH)/tinystr.o $(TINYXML_PATH)/tinyxmlerror.o $(TINYXML_PATH)/tinyxml.o $(TINYXML_PATH)/tinyxmlparser.o 
 LIBS = -L"../DXSDK/Lib" -L$(RESDIR) -lws2_32 $(SDL_LIB) -lddraw -ldxguid -ldinput -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid
 CXXINCS = -I$(DIRECTX_INC) $(SDL_INC) -I"./" -I$(TINYXML_PATH)
 CXXFLAGS = $(CXXINCS) -D__GNUWIN32__ -O2 -Wall -Wno-unknown-pragmas -DWIN32 -DNDEBUG -D_WINDOWS -D_MBCS $(FLAGCROSS)
@@ -69,7 +69,7 @@ strip: $(BIN)
 	$(STRIP) $(BIN)
 
 $(BIN): depend $(LINKOBJ)
-	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS) Bombermaaan_32.dll
 
 STDAFX.o: STDAFX.CPP
 	$(CPP) -c $< -o $@ $(CXXFLAGS)

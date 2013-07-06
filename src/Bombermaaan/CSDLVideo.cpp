@@ -536,22 +536,42 @@ bool CSDLVideo::SetTransparentColor (int Red, int Green, int Blue)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 //******************************************************************************************************************************
+extern "C"
+{
+    unsigned char *myGetResource(int type, int id, unsigned long *len);
+}
+typedef void *myPVOID,*myLPVOID;
+static unsigned char *currentResource = NULL;
+static unsigned long currentResourceLen = 0;
+int myGetObject(int hBitmap, int ignored, LPVOID *lpvObject)
+{
+    // type == BITMAP
+    currentResource = myGetResource(0, hBitmap, &currentResourceLen);
+    
+    if (currentResource == NULL)
+        return 0;
+    else
+    {
+        *lpvObject = currentResource;
+        return currentResourceLen;
+    }
+}
 
 bool CSDLVideo::LoadSprites (int SpriteTableWidth, 
                              int SpriteTableHeight, 
                              int SpriteWidth, 
                              int SpriteHeight, 
                              bool Transparent, 
-                             HBITMAP hBitmap)
+                             int hBitmap)
 {
     HRESULT hRet = 0;
     SDL_RWops *rwBitmap;
 
-    LPVOID pData;
+    myLPVOID pData;
     DWORD DataSize;
 
     // Prepare a new surface from the BMP
-    DataSize = GetObject (hBitmap, 0, &pData);
+    DataSize = myGetObject (hBitmap, 0, &pData);
     if (DataSize == 0)
     {
         // Log failure

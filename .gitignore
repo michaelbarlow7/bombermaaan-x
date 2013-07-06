@@ -5,7 +5,7 @@ src/Bombermaaan/Bombermaaan
 src/RESGEN/ResGen
 src/RESGEN/*.so
 src/RESGEN/*.so.*
-src/RESGEN/ResGen.c
+src/RESGEN/ResData.c
 *.res
 *.dll
 *.exe

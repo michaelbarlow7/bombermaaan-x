@@ -68,7 +68,7 @@ SOCKET          ClientSocket = INVALID_SOCKET;
 #define ENABLE_UPDATE_WHEN_WINDOW_IS_INACTIVE
 
 // Define this if you want sound and music in the game
-#define ENABLE_SOUND
+//#define ENABLE_SOUND
 
 // This is the game mode that is set at start up. Should be set to GAMEMODE_TITLE for a release.
 #define START_UP_GAME_MODE GAMEMODE_TITLE

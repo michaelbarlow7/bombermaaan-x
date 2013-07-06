@@ -195,7 +195,7 @@ public:
     bool                    Create (int Width, int Height, int Depth, bool FullScreen);
     void                    Destroy (void);
     bool                    SetTransparentColor (int Red, int Green, int Blue);
-    bool                    LoadSprites (int SpriteTableWidth, int SpriteTableHeight, int SpriteWidth, int SpriteHeight, bool Transparent, HBITMAP hBitmap);
+    bool                    LoadSprites (int SpriteTableWidth, int SpriteTableHeight, int SpriteWidth, int SpriteHeight, bool Transparent, int hBitmap);
     void                    FreeSprites (void);
     void                    OnWindowMove (void);
     inline void             OnPaint (void);

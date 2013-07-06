@@ -30,7 +30,7 @@ uninstall: all
 	$(RM) $(prefix)/lib/$(BIN) $(prefix)/lib/$(BIN).$(REVISION)
 
 $(BIN): $(OBJ)
-	$(CC) $(LDFLAGS) -o $(BIN) $(LINKOBJ) $(LIBS)
+	$(CC) $(LDFLAGS) -o $(BIN) $(LINKOBJ)
 
 ResData.o: ResData.c
 	$(CC) -c ResData.c -o ResData.o $(CXXFLAGS)

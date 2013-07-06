@@ -241,6 +241,6 @@ DWORD SizeofResource (HMODULE hModule, HRSRC hResource);
 // this function is in the shared library
 extern "C"
 {
-    unsigned char *getResource(int type, int id, unsigned long *len);
+    unsigned char *myGetResource(int type, int id, unsigned long *len);
 }
 #endif

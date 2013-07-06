@@ -419,7 +419,7 @@ bool generateSourceCode(int hBitmapCount, int hSoundCount,
         "\tunsigned long r_len;\n" \
         "} SRESOURCE;\n\n";
     
-    const char footer[] = "unsigned char *getResource(int type, int id, unsigned long *len)\n" \
+    const char footer[] = "unsigned char *myGetResource(int type, int id, unsigned long *len)\n" \
         "{\n\tint count;\n\tint found = 0;\n\tint i;\n\n" \
         "\tif (type == 0) count = RES0_COUNT;\n" \
         "\telse if (type == 1) count = RES1_COUNT;\n\telse return NULL;\n\n" \

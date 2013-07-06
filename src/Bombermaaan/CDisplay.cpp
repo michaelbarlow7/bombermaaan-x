@@ -311,21 +311,21 @@ bool CDisplay::LoadSprites (int SpriteTableWidth,
                             bool Transparent,
                             int BMP_ID)
 {
-#ifdef WIN32
+//#ifdef WIN32
     // Load the bitmap as a resource
-    HBITMAP hBitmap = (HBITMAP) LoadImage (m_hModule, MAKEINTRESOURCE(BMP_ID), IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
+    //HBITMAP hBitmap = (HBITMAP) LoadImage (m_hModule, MAKEINTRESOURCE(BMP_ID), IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
 
     // If it failed
-    if (hBitmap == NULL)
-    {
+    //if (hBitmap == NULL)
+    //{
         // Log failure
-        theLog.WriteLine ("Display         => !!! Could not load resource image (%d) and create handle to bitmap.", BMP_ID);
-        theLog.LogLastError ();
+        //theLog.WriteLine ("Display         => !!! Could not load resource image (%d) and create handle to bitmap.", BMP_ID);
+        //theLog.LogLastError ();
 
         // Get out
-        return false;
-    }
-#endif
+        //return false;
+    //}
+//#endif
     // Create the sprites by giving the sprite table information and the handle to the bitmap.
     // If it fails
 //#ifdef WIN32
@@ -337,29 +337,29 @@ bool CDisplay::LoadSprites (int SpriteTableWidth,
                                    SpriteWidth, 
                                    SpriteHeight, 
                                    Transparent,
-#ifdef WIN32
-                                   hBitmap))
-#else
+//#ifdef WIN32
+                                   //hBitmap))
+//#else
                                    BMP_ID))
-#endif
+//#endif
     {
         // Get out, failure
         return false;
     }
 
-#ifdef WIN32
+//#ifdef WIN32
     // We no longer need the hBitmap so delete it
     // If it fails
-    if (DeleteObject (hBitmap) == 0)
-    {
+    //if (DeleteObject (hBitmap) == 0)
+    //{
         // Log failure
-        theLog.WriteLine ("Display         => !!! Could not delete handle to bitmap.");
-        theLog.LogLastError ();
+        //theLog.WriteLine ("Display         => !!! Could not delete handle to bitmap.");
+        //theLog.LogLastError ();
 
         // Get out, failure
-        return false;
-    }
-#endif
+        //return false;
+    //}
+//#endif
 																	 
     // Everything went right
     return true;
