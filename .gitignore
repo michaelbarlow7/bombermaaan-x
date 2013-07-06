@@ -3,7 +3,9 @@
 .depend
 src/Bombermaaan/Bombermaaan
 src/RESGEN/ResGen
-src/RESGEN/libbombermaaan.so.1.0.0
+src/RESGEN/*.so
+src/RESGEN/*.so.*
+src/RESGEN/ResGen.c
 *.res
 *.dll
 *.exe

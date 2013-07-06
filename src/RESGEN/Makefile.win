@@ -1,0 +1,43 @@
+# New makefile - does the same as the other Makefile, but outputs Bombermaaan_32.dll
+CPP  = g++.exe
+CC   = gcc.exe
+HOSTCPP = g++.exe
+RES  = $(wildcard ../RES32/IMAGE/*.bmp) $(wildcard ../RES32/SOUND/*.*)
+OBJ  = ResData.o
+LINKOBJ  = ResData.o
+# Not sure if we need to include the Bombermaaan directory here...
+CXXINCS =  -I./ -I../Bombermaaan
+BIN  = Bombermaaan_32.dll
+CXXFLAGS = $(CXXINCS) -fPIC -Wall -O2
+LDFLAGS = -shared
+RESGENBIN = ./ResGen.exe
+RES32DIR = ../RES32
+RES16DIR = ../RES
+INSTALL = install
+RM = rm.exe -f
+
+.PHONY: all all-before all-after install clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(BIN) $(OBJ) $(RESGENBIN) ResData.c $(BIN) $(BASENAME) $(BIN).$(REVISION) *~
+
+install: all
+	$(INSTALL) $(BIN) $(BIN).$(REVISION) $(prefix)/lib
+
+uninstall: all
+	$(RM) $(prefix)/lib/$(BIN) $(prefix)/lib/$(BIN).$(REVISION)
+
+$(BIN): $(OBJ)
+	$(CC) $(LDFLAGS) -o $(BIN) $(LINKOBJ) $(LIBS)
+
+ResData.o: ResData.c
+	$(CC) -c ResData.c -o ResData.o $(CXXFLAGS)
+
+ResData.c: $(RESGENBIN)
+	$(RESGENBIN)
+
+$(RESGENBIN): $(RES) ResGen.cpp
+	$(HOSTCPP) -o $(RESGENBIN) ResGen.cpp $(CXXFLAGS)
+
