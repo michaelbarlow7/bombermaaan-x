@@ -28,57 +28,12 @@
 #include "STDAFX.H"
 #include "CWindow.h"
 
-#ifndef WIN32
 #include "SDL.h"
-#endif
 
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 
-
-// Default WinProc
-// HackHackHack!!! We have to do this because the real WinProc is in the class. This is very very hard to 
-// explain. Let's define two memory places where you can store a CWindow* :
-// M1 --> We pass our 'this' pointer in this during CreateWindowEx(). When the WM_CREATE message will be received 
-//        in DefaultWinProc, M1 will be in a member of the CREATESTRUCT (lParam contains the CREATESTRUCT).
-// M2 --> This is a memory place you can access by using GetWindowLong (or Set...). When M1 is accessible, we will 
-//        store M1 in M2, as M1 is permanent (until the window's destruction) and M2 is temporary (we can only get 
-//        it when WM_CREATE is received).
-// This hack was found in the source code of the Network tutorial of Dan Royer.
-// Dan Royer's homepage : http://members.home.com/droyer
-// Network tutorial found on Flipcode : http://www.flipcode.com/network
-#ifdef WIN32
-static LRESULT CALLBACK DefaultWinProc (HWND hwnd, unsigned int msg, WPARAM wParam, LPARAM lParam) 
-{
-    LPCREATESTRUCT lpcs;
-    CWindow *pWindow;
-
-    pWindow = (CWindow *)GetWindowLong (hwnd, 0);  // Pointer to the (C++ object that is the) window.
-    if (!pWindow)       // Not stored yet ?
-    {
-        if (msg == WM_CREATE)       // The window is being created !! lParam contains the CreateStruct.
-        {
-            lpcs = (LPCREATESTRUCT)lParam;
-            pWindow = (CWindow *)lpcs->lpCreateParams;      // Get the CWindow * we stored during CreateWindowEx
-            SetWindowLong (hwnd, 0, (LONG)pWindow);
-
-            return pWindow->WinProc (msg, wParam, lParam);  // Call its WinProc
-        } 
-        else return DefWindowProc( hwnd, msg, wParam, lParam );  // this should never be called
-    } 
-    else    // We got a CWindow * using GetWindowLong so it was already stored
-    {
-        return pWindow->WinProc(msg, wParam, lParam );
-    }
-}
-#endif
-
-
-
-//******************************************************************************************************************************
-//******************************************************************************************************************************
-//******************************************************************************************************************************
 
 
 CWindow::CWindow (HINSTANCE hInstance, const char *pWindowTitle, int IconResourceID)
@@ -86,70 +41,6 @@ CWindow::CWindow (HINSTANCE hInstance, const char *pWindowTitle, int IconResourc
     m_hWnd = NULL;
     m_Active = false;
 
-    // Init the window class
-#ifdef WIN32
-    WNDCLASSEX WndClassEx;
-    WndClassEx.cbSize = sizeof(WNDCLASSEX);
-    WndClassEx.lpszClassName = "Class name";
-    WndClassEx.lpfnWndProc = DefaultWinProc;        // Biiiig Hack. See the function DefaultWinProc
-    WndClassEx.style = CS_VREDRAW | CS_HREDRAW;
-    WndClassEx.hInstance = hInstance;
-    WndClassEx.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-    WndClassEx.hIconSm = NULL;
-    WndClassEx.hCursor = LoadCursor (NULL, IDC_ARROW);
-    WndClassEx.hbrBackground = (HBRUSH) (COLOR_WINDOW + 1);
-    WndClassEx.lpszMenuName = NULL;
-    WndClassEx.cbClsExtra = 0;
-    WndClassEx.cbWndExtra = sizeof(CWindow *);  // We'll store the 'this' pointer in the extra allocated bytes
-
-    // Prepare the window's styles (default ones)
-    DWORD Style = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU & ~WS_THICKFRAME & ~WS_MAXIMIZEBOX/* | WS_MINIMIZEBOX*/;
-    DWORD ExStyle = 0;
-
-    // If registering the window class failed
-    if (!RegisterClassEx (&WndClassEx))
-    {
-        // Log failure
-        theLog.WriteLine ("Window          => !!! Could not register window class.");
-    }
-
-    // Create the window
-    m_hWnd = CreateWindowEx (ExStyle,           // Extended style
-                             "Class name",      // ClassName
-                             pWindowTitle,      // Title
-                             Style,             // Style
-                             CW_USEDEFAULT,     // Position
-                             CW_USEDEFAULT,     
-                             CW_USEDEFAULT,     // Size
-                             CW_USEDEFAULT,     
-                             NULL,              // Parent window
-                             NULL,              // Menu
-                             hInstance,         // Handle to instance
-                             this);             // Pointer to window creation data 
-                                                // (Allows us to store the 'this' pointer)
-
-    // If it failed
-    if (m_hWnd == NULL)
-    {
-        // Log failure
-        theLog.WriteLine ("Window          => !!! Could not create the window.");
-    }
-
-    // If an icon was specified
-    if (IconResourceID != -1)
-    {
-        // Check if the resource ID seems to be valid
-        ASSERT (IconResourceID >= 0);
-        
-        // Load the icon specified by the resource ID
-        HICON hIcon = LoadIcon (hInstance, MAKEINTRESOURCE(IDI_BOMBER));
-        ASSERT (hIcon != NULL);
-
-        // Tell the window to set this icon
-        PostMessage (m_hWnd, WM_SETICON, (WPARAM) ICON_BIG, (LPARAM) hIcon);
-    }
-#endif
-    // the icon in Linux is loaded in CSDLVideo
 }
 
 
@@ -163,14 +54,6 @@ CWindow::CWindow (HINSTANCE hInstance, const char *pWindowTitle, int IconResourc
 CWindow::~CWindow ()
 {
     // If the window exists
-#ifdef WIN32
-    if (m_hWnd != NULL)
-    {
-        // Destroy the window
-        DestroyWindow (m_hWnd);
-        m_hWnd = NULL;
-    }
-#endif
 }
 
 
@@ -183,12 +66,7 @@ CWindow::~CWindow ()
 
 void CWindow::SetClientSize (int ClientWidth, int ClientHeight)
 {
-#ifdef WIN32
-    RECT rc;
-    SetRect (&rc, 0, 0, ClientWidth, ClientHeight);
-    AdjustWindowRectEx (&rc, GetWindowStyle(m_hWnd), (int)GetMenu (m_hWnd), GetWindowExStyle (m_hWnd));
-    SetWindowPos (m_hWnd, HWND_NOTOPMOST, 0, 0, rc.right - rc.left, rc.bottom - rc.top, SWP_NOMOVE);
-#endif
+
 }
 
 
@@ -199,11 +77,8 @@ void CWindow::SetClientSize (int ClientWidth, int ClientHeight)
 
 
 
-#ifdef WIN32
-LRESULT CALLBACK CWindow::WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam) 
-#else
+
 void CWindow::WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam)
-#endif
 {
     switch (msg) 
     {
@@ -219,18 +94,12 @@ void CWindow::WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam)
         case WM_SYSCOMMAND:     OnSysCommand (wParam, lParam);      break;
         case WM_CLOSE:          OnClose (wParam, lParam);           break;
         case WM_DESTROY:        OnDestroy (wParam, lParam);         break;
-#ifndef WIN32
         case SDL_JOYAXISMOTION: OnJoystickAxis(wParam, lParam);		break;
         case SDL_JOYBUTTONDOWN:
         case SDL_JOYBUTTONUP:	OnJoystickButton(wParam, lParam);	break;
-#endif
     }
 
-#ifdef WIN32
-        return DefWindowProc (m_hWnd, msg, wParam, lParam);
-#else
         return;
-#endif
 }
 
 //******************************************************************************************************************************
@@ -240,10 +109,7 @@ void CWindow::WinProc (unsigned int msg, WPARAM wParam, LPARAM lParam)
 
 void CWindow::ShowWindow () 
 { 
-#ifdef WIN32
-    ::ShowWindow (m_hWnd, SW_SHOW); 
-    UpdateWindow (m_hWnd);
-#endif
+
 }
 
 
@@ -259,39 +125,6 @@ void CWindow::ShowWindow ()
 
 void CWindow::MessagePump ()
 {
-#ifdef WIN32
-    MSG msg;
-
-    while (true)
-    {
-        // Manage the messages if some are waiting
-        if (PeekMessage (&msg, NULL, 0, 0, PM_NOREMOVE))
-        {
-            if (!GetMessage (&msg, NULL, 0, 0 ))
-            {
-                m_hWnd = NULL;
-                break;
-            }
-
-            TranslateMessage (&msg); 
-            DispatchMessage (&msg);
-        }
-        // No message to manage ?
-        else
-        {           
-            if (m_Active)
-            {
-                // call the virtual activity method
-                OnWindowActive ();
-            }
-            else
-            {
-                // make sure we go to sleep if we have nothing else to do
-                WaitMessage();
-            }
-        }
-    }
-#else
     SDL_Event event;
     bool quit = false;
 
@@ -347,7 +180,6 @@ void CWindow::MessagePump ()
 	        SDL_Delay(1); // rest for the cpu
         }
     }
-#endif
 }
 
 
@@ -424,9 +256,6 @@ void CWindow::OnActivateApp (WPARAM wParam, LPARAM lParam)
 void CWindow::OnSize (WPARAM wParam, LPARAM lParam) 
 { 
     // Check to see if we are losing our window...
-#ifdef WIN32
-    m_Active = (wParam != SIZE_MAXHIDE && wParam != SIZE_MINIMIZED);
-#endif
 }
 
 
@@ -554,9 +383,6 @@ bool CWindow::OnSysCommand (WPARAM wParam, LPARAM lParam)
 
 void CWindow::OnClose (WPARAM wParam, LPARAM lParam) 
 { 
-#ifdef WIN32
-	DestroyWindow (m_hWnd); // Posts WM_DESTROY
-#endif
 }
 
 
@@ -573,9 +399,7 @@ void CWindow::OnClose (WPARAM wParam, LPARAM lParam)
 
 void CWindow::OnDestroy (WPARAM wParam, LPARAM lParam) 
 { 
-#ifdef WIN32
-	PostQuitMessage (0); // Posts WM_QUIT
-#endif
+
 }
 
 
@@ -585,7 +409,6 @@ void CWindow::OnDestroy (WPARAM wParam, LPARAM lParam)
 //******************************************************************************************************************************
 
 
-#ifndef WIN32
 // Handles the SDL_JOYAXISMOTION message (SDL only).
 
 void CWindow::OnJoystickAxis (WPARAM wParam, LPARAM lParam) 
@@ -611,4 +434,3 @@ void CWindow::OnJoystickButton (WPARAM wParam, LPARAM lParam)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 //******************************************************************************************************************************
-#endif // WIN32
