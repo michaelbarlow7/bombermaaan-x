@@ -99,9 +99,7 @@ private:
     CDemo           m_Demo;                 //!< Demo screen object in which we show a match betweeen computer players.
     CMenuYesNo      m_MenuYesNo;            //!< Yes/No message box object
         
-#ifndef WIN32
     string          m_WindowTitle;
-#endif
 
     void            OnActivateApp  (WPARAM wParam, LPARAM lParam);
     void            OnMove         (WPARAM wParam, LPARAM lParam);
@@ -110,10 +108,8 @@ private:
     void            OnPaint        (WPARAM wParam, LPARAM lParam);
     bool            OnSysCommand   (WPARAM wParam, LPARAM lParam);
     void            OnSize         (WPARAM wParam, LPARAM lParam);
-#ifndef WIN32
     void            OnJoystickAxis (WPARAM wParam, LPARAM lParam);             // SDL_JOYAXISMOTION
     void            OnJoystickButton (WPARAM wParam, LPARAM lParam);       // SDL_JOYBUTTONDOWN/-UP
-#endif
     void            OnWindowActive (void);
     void            StartGameMode (EGameMode GameMode);
     void            FinishGameMode (void);

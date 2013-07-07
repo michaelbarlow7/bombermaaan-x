@@ -30,11 +30,6 @@
 
 class CTimer;
 
-#ifdef WIN32
-#include "CDirectInput.h"
-#else
-#include "CSDLInput.h"
-#endif
 #include "CMainInput.h"
 #include "CPlayerInput.h"
 #include "COptions.h"
@@ -55,11 +50,7 @@ private:
 
     COptions*               m_pOptions;         //!< Link to options object to use
     CTimer*                 m_pTimer;           //!< Link to timer object to use
-#ifdef WIN32
-    CDirectInput            m_DirectInput;      //!< DirectInput object managing the DirectInput interface
-#else
     CSDLInput               m_DirectInput;      //!< SDLInput object managing the DirectInput interface
-#endif
     CMainInput              m_MainInput;        //!< The main input device
     CPlayerInput*           m_PlayerInput;      //!< Dynamically allocated array of player input devices
                             
@@ -74,11 +65,7 @@ public:
     bool                    Create (void);                              //!< Initialize the object
     void                    Destroy (void);                             //!< Uninitialize the object
     inline CMainInput&      GetMainInput (void);
-#ifdef WIN32
-    inline CDirectInput&    GetDirectInput (void);
-#else
     inline CSDLInput&       GetDirectInput (void);
-#endif
     inline CPlayerInput&    GetPlayerInput (int PlayerInput);
     inline int              GetPlayerInputCount (void);                 
     
@@ -116,11 +103,7 @@ inline CMainInput& CInput::GetMainInput (void)
     return m_MainInput;
 }
 
-#ifdef WIN32
-inline CDirectInput& CInput::GetDirectInput (void)
-#else
 inline CSDLInput& CInput::GetDirectInput (void)
-#endif
 {
     return m_DirectInput;
 }

@@ -525,25 +525,8 @@ bool CGame::Create (char **pCommandLine, int pCommandLineCount)
         // Get out
         return false;
     }
-
-    // Set the objects the input object has to communicate with
-#ifdef WIN32
-    m_Input.SetInstanceHandle (m_hInstance);
-    m_Input.SetWindowHandle (m_hWnd);
-#endif
-	
     m_Input.SetOptions (&m_Options);
     m_Input.SetTimer (&m_Timer);
-
-    // Set the objects the display object has to communicate with
-#ifdef WIN32
-    m_Display.SetWindowHandle (m_hWnd);
-    m_Display.SetModuleHandle (m_hModule);
-#else
-    m_Display.SetModuleHandle (NULL);
-    SDL_WM_SetCaption(m_WindowTitle.c_str(), NULL);
-#endif
-
     // Set the objects the match object has to communicate with
     m_Match.SetDisplay (&m_Display);
     m_Match.SetInput (&m_Input);
@@ -1127,7 +1110,6 @@ void CGame::OnMove (WPARAM wParam, LPARAM lParam)
 
 void CGame::OnKeyDown (WPARAM wParam, LPARAM lParam)
 {
-#ifndef WIN32
     if (wParam >= 0 && wParam < MAX_KEYS) {
         CMainInput m_pMainInput = m_Input.GetMainInput();
 
@@ -1150,7 +1132,6 @@ void CGame::OnKeyDown (WPARAM wParam, LPARAM lParam)
         }
 
     }
-#endif
 }
 
 
@@ -1170,7 +1151,6 @@ void CGame::OnKeyUp (WPARAM wParam, LPARAM lParam)
 
 #endif // ENABLE_DEBUG_KEYS
     
-#ifndef WIN32
     if (wParam >= 0 && wParam < MAX_KEYS) {
         CMainInput m_pMainInput = m_Input.GetMainInput();
         CSDLInput *m_pDirectInput = m_pMainInput.GetDirectInput();
@@ -1191,14 +1171,9 @@ void CGame::OnKeyUp (WPARAM wParam, LPARAM lParam)
             m_pPlayerInput.Update();
         }
     }
-#endif
 
     // If the CTRL key is not pressed while the key specified by wParam is released
-#ifdef WIN32
-    if (!(GetKeyState(VK_CONTROL) & 0x8000))
-#else
     if (!(lParam & KMOD_CTRL))
-#endif
     {
         EDisplayMode DisplayMode = DISPLAYMODE_NONE;
         
@@ -1313,7 +1288,6 @@ void CGame::OnSize (WPARAM wParam, LPARAM lParam)
 
 // When the window is active and a jostick axis changes,
 // this method will be called.
-#ifndef WIN32
 void CGame::OnJoystickAxis (WPARAM wParam, LPARAM lParam)
 {
 	SDL_JoyAxisEvent *jaxis;
@@ -1355,7 +1329,6 @@ void CGame::OnJoystickAxis (WPARAM wParam, LPARAM lParam)
 		
 	return;
 }
-#endif
 
 //******************************************************************************************************************************
 //******************************************************************************************************************************
@@ -1364,7 +1337,6 @@ void CGame::OnJoystickAxis (WPARAM wParam, LPARAM lParam)
 // When the window is active and a jostick button is pressed/released,
 // this method will be called.
 
-#ifndef WIN32
 void CGame::OnJoystickButton (WPARAM wParam, LPARAM lParam)
 {
 	SDL_JoyButtonEvent *jbutton;
@@ -1396,7 +1368,6 @@ void CGame::OnJoystickButton (WPARAM wParam, LPARAM lParam)
 	m_pPlayerInput.Update();
 		
 }
-#endif
 
 //******************************************************************************************************************************
 //******************************************************************************************************************************
