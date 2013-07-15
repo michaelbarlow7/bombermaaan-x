@@ -304,36 +304,8 @@ void CSound::FreeSong (ESong Song)
 
 bool CSound::GetSoundResource (int ResourceID, LPVOID &pData, DWORD &DataSize)
 {
-    // Find the resource file
-    HRSRC hResource = FindResource (m_hModule, MAKEINTRESOURCE(ResourceID), "SOUND");
-
-    // If it failed
-    if (hResource == NULL)
-    {
-        // Log failure
-        theLog.WriteLine ("Sound           => !!! Could not find resource.");
-        theLog.LogLastError ();
-
-        // Get out
-        return false;
-    }
-
-    // Load the resource file into memory
-    HGLOBAL hGlobal = LoadResource (m_hModule, hResource);
-
-    // If it failed
-    if (hGlobal == NULL)
-    {
-        // Log failure
-        theLog.WriteLine ("Sound           => !!! Could not load resource.");
-        theLog.LogLastError ();
-
-        // Get out
-        return false;
-    }
-
-    // Get the address of the resource file in memory
-    pData = LockResource (hGlobal);
+    // Load the resource
+    pData = myLoadResource(ResourceID, RES_TYPE_SOUND);
 
     // If it failed
     if (pData == NULL)
@@ -347,7 +319,7 @@ bool CSound::GetSoundResource (int ResourceID, LPVOID &pData, DWORD &DataSize)
     }
 
     // Get the size (in bytes) of the PNG resource file
-    DataSize = SizeofResource (m_hModule, hResource);
+    DataSize = mySizeOfResource ();
 
     // If it failed
     if (DataSize == 0)

@@ -551,7 +551,7 @@ bool CSDLVideo::LoadSprites (int SpriteTableWidth,
     DWORD DataSize;
 
     // Prepare a new surface from the BMP
-    DataSize = myGetObject (hBitmap, 0, &pData);
+    DataSize = myGetObject (hBitmap, &pData);
     if (DataSize == 0)
     {
         // Log failure
