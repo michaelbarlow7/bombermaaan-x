@@ -536,26 +536,6 @@ bool CSDLVideo::SetTransparentColor (int Red, int Green, int Blue)
 //******************************************************************************************************************************
 //******************************************************************************************************************************
 //******************************************************************************************************************************
-extern "C"
-{
-    unsigned char *myGetResource(int type, int id, unsigned long *len);
-}
-typedef void *myPVOID,*myLPVOID;
-static unsigned char *currentResource = NULL;
-static unsigned long currentResourceLen = 0;
-int myGetObject(int hBitmap, int ignored, LPVOID *lpvObject)
-{
-    // type == BITMAP
-    currentResource = myGetResource(0, hBitmap, &currentResourceLen);
-    
-    if (currentResource == NULL)
-        return 0;
-    else
-    {
-        *lpvObject = currentResource;
-        return currentResourceLen;
-    }
-}
 
 bool CSDLVideo::LoadSprites (int SpriteTableWidth, 
                              int SpriteTableHeight, 
